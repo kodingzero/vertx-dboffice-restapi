@@ -491,7 +491,7 @@ public class OfficeDatabaseVerticle extends AbstractVerticle {
         String user = credential.getString("username");
         String pwd  = credential.getString("password");
 
-        LOGGER.info("user/pwd : "+user+"/"+pwd);
+        LOGGER.info("user/pwd db: "+user+"/"+pwd);
 
         JsonArray params = new JsonArray().add(user);
 
@@ -504,12 +504,14 @@ public class OfficeDatabaseVerticle extends AbstractVerticle {
 
                     if (BCrypt.checkpw(pwd,candidate)) {
 
+                        LOGGER.info("password matched");
+
                         dbClient.queryWithParams(sqlQueries.get(SqlQuery.GET_USER),params, resProfile -> {
                             if (resProfile.succeeded()){
                                 JsonArray arr = new JsonArray();
                                 resProfile.result().getRows().forEach(arr::add);
 
-                                message.reply(new JsonObject().put("profile", arr).put("db-reply","succeeded"));
+                                message.reply(new JsonObject().put("epim",arr).put("success","true"));
 
                             }else{
                                 reportQueryError(message, resProfile.cause());
@@ -518,10 +520,10 @@ public class OfficeDatabaseVerticle extends AbstractVerticle {
                         });
                     }else{
                         //reportQueryError(message, res.cause());
-                        message.reply(new JsonObject().put("db-reply","user or password doesn't matched."));
+                        message.reply(new JsonObject().put("success","false"));
                     }
                 } else{
-                    message.reply(new JsonObject().put("db-reply","user or password doesn't matched."));
+                    message.reply(new JsonObject().put("success","false"));
                 }
 
 
@@ -561,7 +563,7 @@ public class OfficeDatabaseVerticle extends AbstractVerticle {
 
                 System.out.println("pwdHash ; "+pwdHash);
 
-                message.reply(new JsonObject().put("profile", arr));
+                message.reply(new JsonObject().put("data", arr));
 
                /* String candidate = res.result().getRows().get(0).getString("pega_password").replaceFirst("2y", "2a");
 

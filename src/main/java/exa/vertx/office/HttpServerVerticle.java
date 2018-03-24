@@ -99,27 +99,41 @@ public class HttpServerVerticle extends AbstractVerticle {
 
                     JsonObject body = (JsonObject)reply.result().body();
 
-                    if (body.getString("db-reply").equalsIgnoreCase("user or password doesn't matched.")){
-                        body.put("reply",body.getString("db-reply"));
+                  //  LOGGER.info("body : "+body.getString("db-reply"));
+                    LOGGER.info("body : "+body.getString("success"));
+
+                    if (body.getString("success").equalsIgnoreCase("false")){
+                       // body.put("reply",body.getString("db-reply"));
+                        body.put("success","false");
                         body.remove("db-reply");
                         context.response().putHeader("Content-Type", "application/json");
 
-                        context.response().end(body.encodePrettily().replaceAll("\\\\","")
-                                .replaceAll("\\{\"profile\":\\[\\{\"data\" : \"","{\"data\":")
-                                .replaceAll("}]}]\"","}]}]")
-                                .replaceAll("\"data\" : \"","\"data\" : "));
+
+
+                        context.response().end(body.encodePrettily());
                     } else{
-                        LOGGER.info("reply :"+body.getString("db-reply"));
                         body.put("token",token);
-                        body.put("reply",body.getString("db-reply"));
-                        body.remove("db-reply");
+                        body.put("success","true");
+                      //  body.remove("db-reply");
                         context.response().putHeader("Content-Type", "application/json");
                         //context.response().end(body.encode());
+                      //  LOGGER.info("context ; "+body.encodePrettily());
                         context.response().end(body.encodePrettily().replaceAll("\\\\","")
-                                .replaceAll("\\{\"profile\":\\[\\{\"data\" : \"","{\"data\":")
+                                .replaceAll("\"epim\" : \\[ \\{","")
+                                .replaceAll("\"data\" : \"","\"data\" : ")
                                 .replaceAll("}]}]\"","}]}]")
-                                .replaceAll("\"data\" : \"","\"data\" : "));
+                                .replaceAll("\\} \\]",""));
+                      /*  context.response().end(body.encodePrettily().replaceAll("\\\\","")
+                                .replaceAll("\"epim\": \\[ \\{ \"data\": \"\\[","{\"data\":")
+                                .replaceAll("}]}]\"","}]}]")
+                                .replaceAll("\"data\" : \"","\"data\" : "));*/
 
+
+                        /*LOGGER.info(body.encodePrettily().replaceAll("\\\\","")
+                                .replaceAll("\"epim\" : \\[ \\{","")
+                                .replaceAll("\"data\" : \"","\"data\" : ")
+                                .replaceAll("}]}]\"","}]}]")
+                                .replaceAll("\\} \\]",""));*/
 
                     }
                     //System.out.println("body : "+body.getString("db-reply"));

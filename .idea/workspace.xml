@@ -2,159 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dffdf1e-5c4f-4e8f-bb47-72fb99b1a06f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_rjeschke_txtmark_0_13.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_c3p0_0_9_5_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_15_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_15_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_dns_4_1_15_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_15_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_15_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_15_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_15_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_15_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_15_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_15_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_4_1_15_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_15_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_auth_common_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_auth_jwt_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_bridge_common_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_codegen_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_core_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_jdbc_client_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_jwt_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_service_proxy_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_sql_common_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_unit_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_web_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_web_client_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_web_common_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_web_templ_freemarker_3_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_23.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mindrot_jbcrypt_0_3m.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mvel_mvel2_2_3_1_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_1_4.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/exa-pim-api.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gen-keystore.bat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gen-keystore.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/keystore.jceks" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/redeploy.bat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/server-keystore.jks" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exa/test/AuthJwt.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exa/test/JsonVerticle.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/EOfficeDBVerticle.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/pim/Authentication.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/util/Runner.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/db-eoffice-sql.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/eoffice-db-sql.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/db-eoffice-prod.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/db-eoffice-sql.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/eoffice-db-sql.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/test/AuthJwt.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/test/JsonVerticle.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$ErrorCodes.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$SqlQuery.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/HttpServerVerticle.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/MainVerticle.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$ErrorCodes.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$SqlQuery.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/pim/Authentication.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/pim/MainVerticle.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthJDBC.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyChatRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyHelloWorldRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRealtimeRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRestRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovySessionsRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyTemplatingRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthJDBC.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSChatRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSHelloWorldRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSRealtimeRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSSessionsRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSTemplatingRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthJDBC.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyChatRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyHelloWorldRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyRealtimeRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubySessionsRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyTemplatingRunner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/logback.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/c3p0-0.9.5.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/freemarker-2.3.23.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/hamcrest-core-1.3.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/jackson-annotations-2.9.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/jackson-core-2.9.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/jackson-databind-2.9.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/jbcrypt-0.3m.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/jjwt-0.9.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/junit-4.12.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/logback-classic-1.2.3.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/logback-core-1.2.3.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/mchange-commons-java-0.2.11.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/mvel2-2.3.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/netty-buffer-4.1.15.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/netty-codec-4.1.15.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/netty-codec-dns-4.1.15.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/netty-codec-http-4.1.15.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/netty-codec-http2-4.1.15.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/netty-codec-socks-4.1.15.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/netty-common-4.1.15.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/netty-handler-4.1.15.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/netty-handler-proxy-4.1.15.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/netty-resolver-4.1.15.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/netty-resolver-dns-4.1.15.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/netty-transport-4.1.15.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/postgresql-42.1.4.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/slf4j-api-1.7.25.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/txtmark-0.13.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-auth-common-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-auth-jwt-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-bridge-common-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-codegen-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-core-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-jdbc-client-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-jwt-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-service-proxy-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-sql-common-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-unit-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-web-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-web-client-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-web-common-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/dependency/vertx-web-templ-freemarker-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/exa-pim-api-3.5.0-fat.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/exa-pim-api-3.5.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/test/AuthJwt.class" afterPath="$PROJECT_DIR$/target/classes/exa/test/AuthJwt.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/test/JsonVerticle.class" afterPath="$PROJECT_DIR$/target/classes/exa/test/JsonVerticle.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$ErrorCodes.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$ErrorCodes.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$SqlQuery.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$SqlQuery.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/HttpServerVerticle.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/HttpServerVerticle.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/MainVerticle.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/MainVerticle.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/pim/Authentication.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/pim/Authentication.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/pim/MainVerticle.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/pim/MainVerticle.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthJDBC.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthJDBC.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyChatRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyChatRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyHelloWorldRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyHelloWorldRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRealtimeRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRealtimeRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRestRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRestRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovySessionsRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovySessionsRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyTemplatingRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyTemplatingRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthJDBC.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthJDBC.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSChatRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSChatRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSHelloWorldRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSHelloWorldRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSRealtimeRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSRealtimeRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSSessionsRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSSessionsRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSTemplatingRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSTemplatingRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthJDBC.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthJDBC.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyChatRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyChatRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyHelloWorldRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyHelloWorldRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyRealtimeRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyRealtimeRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubySessionsRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubySessionsRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyTemplatingRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyTemplatingRunner.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -170,18 +53,8 @@
       <file leaf-file-name="OfficeDatabaseVerticle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="529" column="15" lean-forward="false" selection-start-line="529" selection-start-column="15" selection-end-line="529" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainVerticle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="124" column="5" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="124" selection-end-column="5" />
+            <state relative-caret-position="267">
+              <caret line="525" column="71" lean-forward="false" selection-start-line="525" selection-start-column="71" selection-end-line="525" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -190,8 +63,8 @@
       <file leaf-file-name="HttpServerVerticle.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="83" column="43" lean-forward="false" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
+            <state relative-caret-position="-234">
+              <caret line="102" column="19" lean-forward="false" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -200,8 +73,8 @@
       <file leaf-file-name="db-eoffice-prod.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -239,6 +112,8 @@
       <find>GET_USER</find>
       <find>post-disposisi</find>
       <find>get-user-login</find>
+      <find>get-user-profile</find>
+      <find>user</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -270,9 +145,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/eoffice-db-sql.properties" />
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db-eoffice-sql.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties" />
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/pim/Authentication.java" />
         <option value="/RegExp Fragment (HttpServerVerticle.java:4469).regexp" />
+        <option value="$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties" />
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" />
       </list>
@@ -326,7 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -402,9 +276,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -633,6 +508,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -641,18 +517,18 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34210527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47039473" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30592105" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23373677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24357034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -700,13 +576,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="20" lean-forward="false" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -976,7 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-646">
           <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -984,7 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -992,7 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="54" column="44" lean-forward="false" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1006,24 +872,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/thumb2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="529" column="15" lean-forward="false" selection-start-line="529" selection-start-column="15" selection-end-line="529" selection-end-column="15" />
+        <state relative-caret-position="267">
+          <caret line="525" column="71" lean-forward="false" selection-start-line="525" selection-start-column="71" selection-end-line="525" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="83" column="43" lean-forward="false" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
+        <state relative-caret-position="-234">
+          <caret line="102" column="19" lean-forward="false" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
           <folding />
         </state>
       </provider>
