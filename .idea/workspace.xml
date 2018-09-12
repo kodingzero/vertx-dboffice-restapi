@@ -2,85 +2,128 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dffdf1e-5c4f-4e8f-bb47-72fb99b1a06f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/test/AuthJwt.class" afterPath="$PROJECT_DIR$/target/classes/exa/test/AuthJwt.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/test/JsonVerticle.class" afterPath="$PROJECT_DIR$/target/classes/exa/test/JsonVerticle.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$ErrorCodes.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$ErrorCodes.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$SqlQuery.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$SqlQuery.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/HttpServerVerticle.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/HttpServerVerticle.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/MainVerticle.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/MainVerticle.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/pim/Authentication.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/pim/Authentication.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/pim/MainVerticle.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/pim/MainVerticle.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthJDBC.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthJDBC.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyChatRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyChatRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyHelloWorldRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyHelloWorldRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRealtimeRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRealtimeRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRestRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRestRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovySessionsRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovySessionsRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyTemplatingRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyTemplatingRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthJDBC.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthJDBC.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSChatRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSChatRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSHelloWorldRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSHelloWorldRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSRealtimeRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSRealtimeRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSSessionsRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSSessionsRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSTemplatingRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSTemplatingRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthJDBC.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthJDBC.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyChatRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyChatRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyHelloWorldRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyHelloWorldRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyRealtimeRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyRealtimeRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubySessionsRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubySessionsRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyTemplatingRunner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyTemplatingRunner.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner.class" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner.class" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactiverse_reactive_pg_client_0_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/util/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_dns_4_1_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_4_1_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_auth_common_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_auth_jwt_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_bridge_common_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_codegen_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_core_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_jdbc_client_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_jwt_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_service_proxy_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_sql_common_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_unit_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_web_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_web_client_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_web_common_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_web_templ_freemarker_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exa-pim-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/exa-pim-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redeploy.bat" beforeDir="false" afterPath="$PROJECT_DIR$/redeploy.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-keystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/server-keystore.jks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exa/test/AuthJwt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exa/test/JsonVerticle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/EOfficeDBVerticle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/pim/Authentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db-eoffice-sql.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/eoffice-db-sql.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db-eoffice-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db-eoffice-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db-eoffice-sql.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eoffice-db-sql.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/test/AuthJwt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/test/JsonVerticle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$ErrorCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$ErrorCodes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$SqlQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$SqlQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/HttpServerVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/HttpServerVerticle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/MainVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/MainVerticle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$ErrorCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$ErrorCodes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$SqlQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$SqlQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/pim/Authentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/pim/MainVerticle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/jackson-annotations-2.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/jackson-core-2.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/jackson-databind-2.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/netty-buffer-4.1.15.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/netty-codec-4.1.15.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/netty-codec-dns-4.1.15.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/netty-codec-http-4.1.15.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/netty-codec-http2-4.1.15.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/netty-codec-socks-4.1.15.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/netty-common-4.1.15.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/netty-handler-4.1.15.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/netty-handler-proxy-4.1.15.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/netty-resolver-4.1.15.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/netty-resolver-dns-4.1.15.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/netty-transport-4.1.15.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-auth-common-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-auth-jwt-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-bridge-common-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-codegen-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-core-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-jdbc-client-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-jwt-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-service-proxy-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-sql-common-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-unit-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-web-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-web-client-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-web-common-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-web-templ-freemarker-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/exa-pim-api-3.5.0-fat.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/exa-pim-api-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1146730692">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OfficeDatabaseVerticle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="525" column="71" lean-forward="false" selection-start-line="525" selection-start-column="71" selection-end-line="525" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpServerVerticle.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-234">
-              <caret line="102" column="19" lean-forward="false" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db-eoffice-prod.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -91,38 +134,40 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cast</find>
-      <find>SQL_GET_LOGIN</find>
-      <find>SQL_DAS</find>
-      <find>loginHandler</find>
-      <find>jwt</find>
-      <find>X-XSRF-TOKEN</find>
-      <find>list</find>
-      <find>JSON</find>
-      <find>sifat</find>
-      <find>TEST</find>
-      <find>int</find>
-      <find>foreach</find>
-      <find>CONFIG_EPIMDB_SQL_QUERIES_RESOURCE_FILE</find>
-      <find>profile</find>
-      <find>808</find>
-      <find>matu</find>
-      <find>integer</find>
-      <find>ca</find>
-      <find>GET_USER</find>
-      <find>post-disposisi</find>
-      <find>get-user-login</find>
-      <find>get-user-profile</find>
-      <find>user</find>
+      <find>get-share</find>
+      <find>push</find>
+      <find>disposisi</find>
+      <find>INBOX</find>
+      <find>fromfile</find>
+      <find>login</find>
+      <find>update pegawai set</find>
+      <find>update-user-player</find>
+      <find>UPDATE_PLAYER</find>
+      <find>office</find>
+      <find>getMail</find>
+      <find>reportqueryer</find>
+      <find>OFFICE</find>
+      <find>getmail</find>
+      <find>postDisposisi</find>
+      <find>credential</find>
+      <find>loginhandl</find>
+      <find>get-user</find>
+      <find>jwtauth</find>
+      <find>get_mail_to</find>
+      <find>getm</find>
+      <find>GETM</find>
+      <find>getmailto</find>
+      <find>get_emp</find>
+      <find>get_attachment</find>
+      <find>get_share_doc</find>
+      <find>data</find>
+      <find>loginhandler</find>
+      <find>GET_LOGIN</find>
+      <find>getprofile</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -136,21 +181,42 @@
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/java/exa/test/JsonVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/resources/logback.xml" />
-        <option value="$PROJECT_DIR$/redeploy.bat" />
         <option value="$PROJECT_DIR$/gen-keystore.sh" />
         <option value="$PROJECT_DIR$/gen-keystore.bat" />
         <option value="$PROJECT_DIR$/src/main/java/exa/test/postgres/PgVertxTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/EOfficeDBVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/resources/eoffice-db-sql.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db-eoffice-sql.properties" />
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/pim/Authentication.java" />
         <option value="/RegExp Fragment (HttpServerVerticle.java:4469).regexp" />
+        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/pim/JsonArray.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/pim/JsonArrayExample.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exa/test/PushOneSignal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/pim/PushNotification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/PushNotificationVerticle.java" />
+        <option value="$PROJECT_DIR$/src/config/local.json" />
+        <option value="$PROJECT_DIR$/src/config/api.json" />
+        <option value="$PROJECT_DIR$/redeploy.bat" />
+        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/util/Config.java" />
+        <option value="$PROJECT_DIR$/target/classes/db-eoffice-prod.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficePostgresVerticle.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/config/EOfficeConfig.json" />
+        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java" />
+        <option value="$PROJECT_DIR$/src/config/config.json" />
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" />
       </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="MavenProjectNavigator">
@@ -165,127 +231,186 @@
           <item name="exa-pim-api" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="exa-pim-api" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="exa-pim-api" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-109" />
-    <option name="y" value="180" />
-    <option name="width" value="1370" />
-    <option name="height" value="744" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1364" />
+    <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
+      <showMembers AndroidView="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
+      <pane id="PackagesPane">
         <subPane>
           <expand>
             <path>
-              <item name="exa-pim-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exa-pim-api" type="462c0819:PsiDirectoryNode" />
+              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
+              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
-              <item name="exa-pim-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exa-pim-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
+              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
+              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
             </path>
             <path>
-              <item name="exa-pim-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exa-pim-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exa-pim-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exa-pim-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exa-pim-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exa-pim-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="exa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exa-pim-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exa-pim-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="exa" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exa-pim-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exa-pim-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="exa" type="462c0819:PsiDirectoryNode" />
-              <item name="vertx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exa-pim-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exa-pim-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="exa" type="462c0819:PsiDirectoryNode" />
-              <item name="vertx" type="462c0819:PsiDirectoryNode" />
-              <item name="pim" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exa-pim-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exa-pim-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="exa" type="462c0819:PsiDirectoryNode" />
-              <item name="vertx" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
+              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
+              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
+              <item name="office" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="eoffice-rest-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eoffice-rest-api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eoffice-rest-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eoffice-rest-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eoffice-rest-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eoffice-rest-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eoffice-rest-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="vertx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eoffice-rest-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="vertx" type="462c0819:PsiDirectoryNode" />
+              <item name="office" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eoffice-rest-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="eoffice-rest-api" type="cbb8eebc:String" user="eoffice-rest-api" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="eoffice-rest-api" type="cbb8eebc:String" user="eoffice-rest-api" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="eoffice-rest-api" type="cbb8eebc:String" user="eoffice-rest-api" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="config" type="cbb8eebc:String" user="config" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="eoffice-rest-api" type="cbb8eebc:String" user="eoffice-rest-api" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="eoffice-rest-api" type="1abcf292:AndroidViewProjectNode" />
+              <item name="exa-pim-api" type="e9137016:NonAndroidModuleNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="1abcf292:AndroidViewProjectNode" />
+              <item name="exa-pim-api" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="1abcf292:AndroidViewProjectNode" />
+              <item name="exa-pim-api" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="vertx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="1abcf292:AndroidViewProjectNode" />
+              <item name="exa-pim-api" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="vertx" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="1abcf292:AndroidViewProjectNode" />
+              <item name="exa-pim-api" type="e9137016:NonAndroidModuleNode" />
+              <item name="resources" type="f7eae187:NonAndroidSourceTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="last.edited.regexp" value="profile : [{data : &quot;" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ExaWorkspaces\CIMAHI-SMART-CITY\exa-pim-api\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ExaWorkspaces\CIMAHI-SMART-CITY\exa-pim-api\src\main\resources\laporan" />
+      <recent name="C:\ExaWorkspaces\CIMAHI-SMART-CITY\exa-pim-api\src\main\resources\document" />
+      <recent name="C:\ExaWorkspaces\CIMAHI-SMART-CITY\exa-pim-api\src\main\resources\template" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -299,202 +424,122 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Authentication">
+  <component name="RunManager" selected="Application.PushNotification">
     <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Authentication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="exa.vertx.pim.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="MAIN_CLASS_NAME" value="exa.vertx.pim.Authentication" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
       <module name="exa-pim-api" />
-      <envs />
-    </configuration>
-    <configuration name="JsonVerticle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="exa.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="exa.test.JsonVerticle" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="exa-pim-api" />
-      <envs />
-    </configuration>
-    <configuration name="MainVerticle (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="exa.vertx.office.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="exa.vertx.office.MainVerticle" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="exa-pim-api" />
-      <envs />
-    </configuration>
-    <configuration name="MainVerticle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="exa.vertx.pim.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="exa.vertx.pim.MainVerticle" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exa.vertx.pim.JsonArray" />
       <module name="exa-pim-api" />
-      <envs />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exa.vertx.pim.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonArrayExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exa.vertx.pim.JsonArrayExample" />
+      <module name="exa-pim-api" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exa.vertx.pim.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="PgVertxTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <option name="MAIN_CLASS_NAME" value="exa.test.postgres.PgVertxTest" />
+      <module name="exa-pim-api" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="exa.test.postgres.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="exa.test.postgres.PgVertxTest" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PushNotification" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exa.vertx.pim.PushNotification" />
       <module name="exa-pim-api" />
-      <envs />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exa.vertx.pim.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.MainVerticle" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Authentication" />
-      <item index="2" class="java.lang.String" itemvalue="Application.JsonVerticle" />
-      <item index="3" class="java.lang.String" itemvalue="Application.MainVerticle (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Application.PgVertxTest" />
+    <list>
+      <item itemvalue="Application.Authentication" />
+      <item itemvalue="Application.PgVertxTest" />
+      <item itemvalue="Application.JsonArray" />
+      <item itemvalue="Application.JsonArrayExample" />
+      <item itemvalue="Application.PushNotification" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Authentication" />
-        <item index="1" class="java.lang.String" itemvalue="Application.PgVertxTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.MainVerticle (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Application.JsonVerticle" />
-        <item index="4" class="java.lang.String" itemvalue="Application.MainVerticle" />
+      <list>
+        <item itemvalue="Application.PushNotification" />
+        <item itemvalue="Application.JsonArrayExample" />
+        <item itemvalue="Application.JsonArray" />
+        <item itemvalue="Application.Authentication" />
+        <item itemvalue="Application.PgVertxTest" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -508,396 +553,282 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34210527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30592105" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24357034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39473686" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info content_ui="combo" x="563" y="160" width="240" height="407" id="Project" order="0" visible="true" weight="0.19288956" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.39438945" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Flutter Inspector" order="6" />
+      <window_info anchor="right" id="Flutter Outline" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.09152799" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39473686" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34210527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3026316" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21482602" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="37" lean-forward="false" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/Authentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8007">
-          <caret line="471" column="64" lean-forward="false" selection-start-line="471" selection-start-column="22" selection-end-line="471" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/util/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4131">
-          <caret line="243" column="1" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="243" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/test/JsonVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="37" lean-forward="false" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/Authentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3145">
-          <caret line="185" column="19" lean-forward="false" selection-start-line="185" selection-start-column="19" selection-end-line="185" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="37" lean-forward="false" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/Authentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3247">
-          <caret line="191" column="0" lean-forward="true" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="98" column="21" lean-forward="false" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3553">
-          <caret line="235" column="10" lean-forward="false" selection-start-line="235" selection-start-column="10" selection-end-line="235" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="98" column="21" lean-forward="false" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3995">
-          <caret line="235" column="10" lean-forward="true" selection-start-line="235" selection-start-column="10" selection-end-line="235" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="98" column="21" lean-forward="false" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="34" lean-forward="false" selection-start-line="29" selection-start-column="48" selection-end-line="38" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" column="72" lean-forward="false" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="47" lean-forward="true" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" column="72" lean-forward="false" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="90" column="45" lean-forward="true" selection-start-line="90" selection-start-column="45" selection-end-line="90" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/Whisky/Whisky.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/Whisky/MyArticle.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.5.0/vertx-core-3.5.0.jar!/io/vertx/core/http/HttpServerResponse.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="76" column="9" lean-forward="false" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.5.0/vertx-core-3.5.0.jar!/io/vertx/core/http/HttpServerResponse.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/EOfficeService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.5.0/vertx-core-3.5.0.jar!/io/vertx/core/AbstractVerticle.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/redeploy.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/util/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="228" column="10" lean-forward="false" selection-start-line="228" selection-start-column="10" selection-end-line="228" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.5.0/vertx-core-3.5.0.jar!/io/vertx/core/AbstractVerticle.class" />
     <entry file="file://$PROJECT_DIR$/gen-keystore.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="53" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen-keystore.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="7" column="53" lean-forward="true" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/replay_pid4208.log" />
     <entry file="file://$PROJECT_DIR$/hs_err_pid4208.log" />
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/test/postgres/PgVertxTest.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.5.0/vertx-core-3.5.0.jar!/io/vertx/core/Handler.class" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/thumb2.jpg" />
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.5.0/vertx-core-3.5.0-sources.jar!/io/vertx/core/json/JsonArray.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/JsonArray.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/JsonArrayExample.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-web/3.5.0/vertx-web-3.5.0-sources.jar!/io/vertx/ext/web/FileUpload.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-web/3.5.0/vertx-web-3.5.0-sources.jar!/io/vertx/ext/web/RoutingContext.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/test/JsonVerticle.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/test/AuthJwt.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/test/PushOneSignal.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/Authentication.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25-sources.jar!/org/slf4j/LoggerFactory.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.5.0/vertx-core-3.5.0-sources.jar!/io/vertx/core/AbstractVerticle.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/PushNotification.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.5.0/vertx-core-3.5.0-sources.jar!/io/vertx/core/eventbus/EventBus.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.5.0/vertx-core-3.5.0-sources.jar!/io/vertx/core/Vertx.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/PushNotificationVerticle.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-9/lib/src.zip!/java.base/java/nio/file/Files.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen-keystore.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/db-eoffice-prod.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/eoffice-db-sql.properties" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-sql.properties" />
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.5.2/vertx-core-3.5.2.jar!/io/vertx/core/AbstractVerticle.class" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="104" column="25" lean-forward="false" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
+        <state relative-caret-position="136">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.5.0/vertx-core-3.5.0.jar!/io/vertx/core/Handler.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/util/Runner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/EOfficeDBVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="20" column="57" lean-forward="false" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/eoffice-db-sql.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-sql.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/test/JsonVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-646">
-          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/test/AuthJwt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/Authentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="54" column="44" lean-forward="false" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="124" column="5" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="124" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="3400">
+          <caret line="228" column="10" selection-start-line="228" selection-start-column="10" selection-end-line="228" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="16" />
-          <folding />
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/thumb2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="188" selection-start-line="4" selection-start-column="188" selection-end-line="4" selection-end-column="188" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="45" column="58" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redeploy.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="81" selection-start-line="10" selection-start-column="81" selection-end-line="10" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6851">
+          <caret line="419" column="48" selection-start-line="419" selection-start-column="48" selection-end-line="419" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/util/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="525" column="71" lean-forward="false" selection-start-line="525" selection-start-column="71" selection-end-line="525" selection-end-column="71" />
-          <folding />
+        <state relative-caret-position="9892">
+          <caret line="637" selection-start-line="637" selection-end-line="637" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-234">
-          <caret line="102" column="19" lean-forward="false" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="108" column="47" lean-forward="true" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>exa-pim-api</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.2.3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

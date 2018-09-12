@@ -5,7 +5,6 @@ import io.vertx.core.Future;
 import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServer;
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.jwt.JWTAuth;
 import io.vertx.ext.auth.jwt.JWTOptions;
@@ -13,9 +12,17 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.CorsHandler;
-import io.vertx.ext.web.handler.JWTAuthHandler;
+import io.vertx.ext.web.handler.StaticHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Base64;
 
 import java.util.*;
 
@@ -23,17 +30,53 @@ public class HttpServerVerticle extends AbstractVerticle {
     private static final Logger LOGGER = LoggerFactory.getLogger(HttpServerVerticle.class);
 
     public static final String CONFIG_HTTP_SERVER_PORT = "http.server.port";
-    public static final String CONFIG_WIKIDB_QUEUE = "epimdb.queue";
+    public static final String CONFIG_APIDB_QUEUE = "epimdb.queue";
+    public static final String PUBLIC_IMAGES = "public.images";
+    public static final String PROFILE_IMAGES = "public.profile";
+    public static final String FILE_LOCATION="file.location";
+    public static final String PUBLIC_ASSETS_DOKUMEN="public.assets.sharedoc";
+    public static final String PUBLIC_ASSETS_LAPORAN="public.assets.laporan";
+    public static final String PUBLIC_ASSETS_TEMPLATE="public.assets.template";
+    private static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private static final int DEFAULT_PORT = 8085;
+
 
     private String epimDbQueue = "epimdb.queue";
+    private String urlPath;
+    private String urlPathDoc;
+    private String urlPathTemplate;
+    private String urlPathLaporan;
+    private String fileStore;
+    private JWTAuth jwtAuth;
 
     @Override
     public void start(Future<Void> startFuture) throws Exception {
 
-        epimDbQueue = config().getString(CONFIG_WIKIDB_QUEUE, "epimdb.queue");
+        epimDbQueue = config().getString(CONFIG_APIDB_QUEUE, "epimdb.queue");
+
+        urlPath= config().getString(PUBLIC_IMAGES,"public.images");
+
+        urlPathDoc = config().getString(PUBLIC_ASSETS_DOKUMEN, "public.assets.document");
+
+        urlPathLaporan = config().getString(PUBLIC_ASSETS_LAPORAN, "public.assets.laporan");
+        
+        urlPathTemplate = config().getString(PUBLIC_ASSETS_TEMPLATE, "public.assets.template");
+
+        String avatarPath = config().getString(PROFILE_IMAGES,"public.profiles");
+
+        fileStore= config().getString(FILE_LOCATION,"file.location");
+
+        // Generate the certificate for https
+       // SelfSignedCertificate cert = SelfSignedCertificate.create();
 
         // tag::https-server[]
+        //HttpServer server = vertx.createHttpServer((new HttpServerOptions()
+          //      .setSsl(true)
+            //    .setKeyCertOptions(cert.keyCertOptions())));
+
         HttpServer server = vertx.createHttpServer();
+
+
         // end::https-server[]
 
         Router router = Router.router(vertx);
@@ -63,8 +106,11 @@ public class HttpServerVerticle extends AbstractVerticle {
 
         //[start sub-route]
         Router apiRouter = Router.router(vertx);
+        Router apiAsset = Router.router(vertx);
 
-        JWTAuth jwtAuth = JWTAuth.create(vertx, new JsonObject()
+
+
+        jwtAuth = JWTAuth.create(vertx, new JsonObject()
                 .put("keyStore", new JsonObject()
                         .put("path", "keystore.jceks")
                         .put("type", "jceks")
@@ -74,104 +120,52 @@ public class HttpServerVerticle extends AbstractVerticle {
 
         apiRouter.get("/token").handler(ctx -> {
             ctx.response().putHeader("Content-Type", "application/json");
-            ctx.response().end(jwtAuth.generateToken(new JsonObject(), new JWTOptions().setExpiresInMinutes(12L)));
+            ctx.response().end(jwtAuth.generateToken(new JsonObject(), new JWTOptions().setExpiresInMinutes((int) 12L)));
         });
 
 
-        apiRouter.post("/login").handler(context -> {
-
-            JsonObject credential = context.getBodyAsJson();
-            System.out.println(credential);
-
-            JsonObject request = new JsonObject().put("session", credential);
-
-            DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-user-login");
-
-            vertx.eventBus().send(epimDbQueue,request, options, reply -> {
-                if (reply.succeeded()) {
-
-                    String token = jwtAuth.generateToken(
-                            new JsonObject()
-                                    .put("token",context.request().getHeader("login")),
-                            new JWTOptions().setExpiresInMinutes(200L)
-                    );
+        apiRouter.post("/login").handler(this::loginHandler);
 
 
-                    JsonObject body = (JsonObject)reply.result().body();
-
-                  //  LOGGER.info("body : "+body.getString("db-reply"));
-                    LOGGER.info("body : "+body.getString("success"));
-
-                    if (body.getString("success").equalsIgnoreCase("false")){
-                       // body.put("reply",body.getString("db-reply"));
-                        body.put("success","false");
-                        body.remove("db-reply");
-                        context.response().putHeader("Content-Type", "application/json");
-
-
-
-                        context.response().end(body.encodePrettily());
-                    } else{
-                        body.put("token",token);
-                        body.put("success","true");
-                      //  body.remove("db-reply");
-                        context.response().putHeader("Content-Type", "application/json");
-                        //context.response().end(body.encode());
-                      //  LOGGER.info("context ; "+body.encodePrettily());
-                        context.response().end(body.encodePrettily().replaceAll("\\\\","")
-                                .replaceAll("\"epim\" : \\[ \\{","")
-                                .replaceAll("\"data\" : \"","\"data\" : ")
-                                .replaceAll("}]}]\"","}]}]")
-                                .replaceAll("\\} \\]",""));
-                      /*  context.response().end(body.encodePrettily().replaceAll("\\\\","")
-                                .replaceAll("\"epim\": \\[ \\{ \"data\": \"\\[","{\"data\":")
-                                .replaceAll("}]}]\"","}]}]")
-                                .replaceAll("\"data\" : \"","\"data\" : "));*/
-
-
-                        /*LOGGER.info(body.encodePrettily().replaceAll("\\\\","")
-                                .replaceAll("\"epim\" : \\[ \\{","")
-                                .replaceAll("\"data\" : \"","\"data\" : ")
-                                .replaceAll("}]}]\"","}]}]")
-                                .replaceAll("\\} \\]",""));*/
-
-                    }
-                    //System.out.println("body : "+body.getString("db-reply"));
-
-
-
-
-                } else {
-                    context.fail(reply.cause());
-                }
-            });
-
-        });
-
-        // [start method get]
-
-        apiRouter.get("/login/:username/:password").handler(this::loginHandler);
-        apiRouter.get("/getDashboard/:nip").handler(this::dashbordHandler);
-        apiRouter.get("/getInbox/:nip").handler(this::inboxHandler);
-        apiRouter.get("/getFlowDispos/:idsurat").handler(this::flowDisposHandler);
-        apiRouter.get("/getStaffLev1/:unor/:level").handler(this::getStaffDisposisiHandler);
-        apiRouter.get("/getStaffLev2/:unor").handler(this::getStaffLev2Handler);
-        apiRouter.get("/getStaffLev3/:unor").handler(this::getStaffLev3Handler);
-        apiRouter.get("/getStaff/:unor").handler(this::staffDisposHandler);
         // [start new method, cause patching db]
-        apiRouter.get("/getMail/:nip/:type").handler(this::getMail);
+        apiRouter.get("/getProfile/:username/:password").handler(this::getProfile);
+        apiRouter.get("/getMail/:username/:mailType").handler(this::getMail);
         apiRouter.get("/getMailTo/:mailId").handler(this::getMailTo);
+        apiRouter.get("/getEmpTree/:pegaId").handler(this::getEmpTree);
+        apiRouter.get("/getGraphMail/:pegaNip").handler(this::getGraphMail);
+        apiRouter.get("/getAttachment/:mailId").handler(this::getAttachment);
+        apiRouter.get("/getReportByMail/:mailId").handler(this::getReportByMail);
+        apiRouter.get("/getReportByNip/:mailId/:manoId").handler(this::getReportByNip);
+        apiRouter.get("/getDraftChat/:mailId").handler(this::getDraftChat);
+        apiRouter.get("/getShareDoc/:share").handler(this::getShareDoc);
+
+        apiRouter.post("/push").handler(this::pushNotification);
+        // Enable multipart form data parsing
+        apiRouter.post("/upload").handler(BodyHandler.create()
+                .setUploadsDirectory(FILE_LOCATION));
+
+        apiRouter.post("/upload").handler(this::postReport);
         // [end tag method get]
 
 
         // [start method post]
-        apiRouter.post("/postDisposNotif").handler(this::disposNotifHandler);
-        apiRouter.post("/postTindakLanjut").handler(this::tindakLanjutHandler);
+        apiRouter.post("/disposisiTo").handler(this::disposisiTo);
+        apiRouter.post("/deleteStaff").handler(this::disposeStaff);
+        apiRouter.post("/postDraft").handler(this::postMReqPlay);
+
         // [end tag : method post]
 
-        router.mountSubRouter("/eoffice/api", apiRouter);
+        //  apiRouter.route("/static/*").handler(StaticHandler.create());
+        // serve static resources
+        apiAsset.route("/assets/*").handler(StaticHandler.create().setCachingEnabled(false).setWebRoot("assets"));
 
-        int portNumber = config().getInteger(CONFIG_HTTP_SERVER_PORT, 8085);  // <3>
+
+        router.mountSubRouter("/eoffice/api", apiRouter);
+        router.mountSubRouter("/eoffice/static",apiAsset);
+
+
+
+        int portNumber = config().getInteger(CONFIG_HTTP_SERVER_PORT, DEFAULT_PORT);  // <3>
         server
                 .requestHandler(router::accept)
                 .listen(portNumber, ar -> {
@@ -185,8 +179,476 @@ public class HttpServerVerticle extends AbstractVerticle {
                 });
     }
 
+    private void getProfile(RoutingContext context) {
+        LOGGER.info("getProfile");
+
+        String userName = context.request().getParam("username");
+        String password = context.request().getParam("password");
+
+
+        JsonObject request = new JsonObject().put("userName", userName).put("password",password);
+
+
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-profile");
+
+        vertx.eventBus().send(epimDbQueue, request, options, reply -> {
+            if (reply.succeeded()) {
+                JsonObject body = (JsonObject) reply.result().body();
+
+                LOGGER.info("urlPathDoc: " + urlPathDoc);
+
+                context.response().putHeader("Content-Type", "application/json");
+                context.response().end(body.encodePrettily().replaceAll("\\\\","")
+                        .replaceAll("\\\\","")
+                        .replaceFirst("\"\\[","[")
+                        .replaceFirst("\"data\" : \\[","\"data\":")
+                        .replaceFirst("],",",")
+                        .replaceFirst("\"\\]\"","]")
+                        .replaceAll("}]}]\"","}]}]")
+                        .replaceAll("\\} \\]", ""));
+
+            } else {
+                context.fail(reply.cause());
+            }
+        });
+    }
+
+    private void postMReqPlay(RoutingContext context) {
+        LOGGER.info("postMReqPlay");
+        JsonObject request = context.getBodyAsJson();
+        JsonObject jsonData = request.getJsonObject("data");
+
+        // LOGGER.info("jsondata: "+jsonData);
+        String imgBase64 = jsonData.getString("replay");
+        String unor = jsonData.getString("org");
+        String pegaNip = jsonData.getString("username");
+
+        LOGGER.info("json: " + unor + "/" + pegaNip);
+
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int year = localDate.getYear();
+        int month = localDate.getMonthValue();
+        int day = localDate.getDayOfMonth();
+
+        String random = randomAlphaNumeric(8);
+
+        LOGGER.info("random: " + random);
+
+        String fileName = unor + pegaNip + year + month + day + "_" + random + ".png";
+
+        String filePath = fileStore + pegaNip + "/" + fileName;
+
+        LOGGER.info(filePath);
+
+        File file = new File(filePath);
+
+        // add filename attribute to json
+        request.put("filename", fileName);
+
+        //LOGGER.info("newRequest before: "+request);
+
+        // use blocking handler for handle blocking process
+        vertx.<String>executeBlocking(future -> {
+
+            File fileDirectory = new File(fileStore + pegaNip);
+
+            if (!fileDirectory.exists()) {
+                fileDirectory.mkdir();
+                LOGGER.info("directory created");
+            }
+
+            // decode base64 encoded image
+
+            try (FileOutputStream imageOutFile = new FileOutputStream(file)) {
+
+                if (!file.exists()) {
+                    file.createNewFile();
+                }
+                // Converting a Base64 String into Image byte array
+                byte[] imageByteArray = Base64.getDecoder().decode(imgBase64);
+
+                imageOutFile.write(imageByteArray);
+            } catch (FileNotFoundException e) {
+                LOGGER.info("Image not found " + e);
+            } catch (IOException ioe) {
+                LOGGER.info("Exception while reading the Image " + ioe);
+            }
+
+            String result = "succeed";
+
+            future.complete(result);
+
+        }, res -> {
+
+            if (res.succeeded()) {
+                //  LOGGER.info("file created");
+
+                //    LOGGER.info("newRequest:"+request);
+
+                DeliveryOptions options = new DeliveryOptions().addHeader("action", "post-mail-mreqplay");
+
+                vertx.eventBus().send(epimDbQueue, request, options, reply -> {
+                    if (reply.succeeded()) {
+                        JsonObject body = (JsonObject) reply.result().body();
+                        context.response().putHeader("Content-Type", "application/json");
+                        context.response().end(body.encode());
+
+                    } else {
+                        context.fail(reply.cause());
+                    }
+                });
+
+            } else {
+                res.failed();
+                //context.fail(reply.cause());
+            }
+        });
+    }
+
+    private void getShareDoc(RoutingContext context) {
+        LOGGER.info("getShareDoc");
+
+        String share = context.request().getParam("share");
+
+        JsonObject request = new JsonObject().put("share", share);
+
+        // LOGGER.info("mailId: "+mailId);
+
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-share-doc");
+
+        vertx.eventBus().send(epimDbQueue, request, options, reply -> {
+            if (reply.succeeded()) {
+                JsonObject body = (JsonObject) reply.result().body();
+
+                LOGGER.info("urlPathDoc: " + urlPathDoc);
+
+                context.response().putHeader("Content-Type", "application/json");
+                context.response()
+                        .end(body.encodePrettily().replaceAll("\\\\", "").replaceAll("\"doc\" : \\[ \\{", "")
+                                .replaceAll("\"data\" : \"", "\"data\" : ")
+                                .replaceAll("\"uri\":", "\"uri\" :\"" + urlPathDoc).replaceAll("dokumen/\"", "dokumen/")
+                                .replaceAll("}]}]\"", "}]}]").replaceAll("\\} \\]", "").replaceAll("]\"", "]"));
+
+            } else {
+                context.fail(reply.cause());
+            }
+        });
+    }
+    
+    private void getDraftChat(RoutingContext context) {
+        LOGGER.info("getDraftChat");
+
+        Integer mailId = Integer.parseInt(context.request().getParam("mailId"));
+
+        JsonObject request = new JsonObject().put("mailId", mailId);
+
+        // LOGGER.info("mailId: "+mailId);
+
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-draft-chat");
+
+        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
+            if (reply.succeeded()) {
+                JsonObject body = (JsonObject) reply.result().body();
+
+                LOGGER.info("urlpath: "+urlPath);
+
+
+                context.response().putHeader("Content-Type", "application/json");
+                context.response().end(body.encodePrettily()
+                        .replaceAll("\\\\","")
+                        .replaceAll("\"uri\" :","\"uri\" : \""+urlPath)
+                        .replaceAll("images/ \"","images/"));
+
+
+            } else {
+                context.fail(reply.cause());
+            }
+        });
+    }
+
+    private void getReportByNip(RoutingContext context) {
+        LOGGER.info("getReportByNip");
+
+        Integer mailId = Integer.parseInt(context.request().getParam("mailId"));
+        Integer manoId = Integer.parseInt(context.request().getParam("manoId"));
+        JsonObject request = new JsonObject().put("mailId", mailId).put("manoId",manoId);
+
+       // LOGGER.info("mailId: "+mailId);
+
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-report-by-nip");
+
+        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
+            if (reply.succeeded()) {
+                JsonObject body = (JsonObject) reply.result().body();
+
+                LOGGER.info("urlpath: "+urlPath);
+
+
+                context.response().putHeader("Content-Type", "application/json");
+                context.response().end(body.encodePrettily()
+                        .replaceAll("\\\\","")
+                        .replaceAll("\"uri\" :","\"uri\" : \""+urlPathLaporan)
+                        .replaceAll("laporan/ \"","laporan/"));
+
+
+            } else {
+                context.fail(reply.cause());
+            }
+        });
+    }
+
+    private void getReportByMail(RoutingContext context) {
+        LOGGER.info("getReportByMail");
+
+        Integer mailId = Integer.parseInt(context.request().getParam("mailId"));
+        JsonObject request = new JsonObject().put("mailId", mailId);
+
+        LOGGER.info("mailId: "+mailId);
+
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-report-by-mail");
+
+        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
+            if (reply.succeeded()) {
+                JsonObject body = (JsonObject) reply.result().body();
+
+                LOGGER.info("urlpath: "+ urlPathLaporan);
+
+
+                context.response().putHeader("Content-Type", "application/json");
+                context.response().end(body.encodePrettily()
+                        .replaceAll("\\\\","")
+                        .replaceAll("\"report\" : \\[ \\{","")
+                        .replaceAll("\"data\" : \"","\"data\" : ")
+                        .replaceAll("\"uri\":","\"uri\" :\""+urlPathLaporan)
+                        .replaceAll("images/\"", "images/")
+                        .replaceAll("laporan/\"", "laporan/")
+                        .replaceAll("}]}]\"","}]}]")
+                        .replaceAll("\\} \\]","")
+                        .replaceAll("]\"","]"));
+
+
+            } else {
+                context.fail(reply.cause());
+            }
+        });
+    }
+
+    private void getAttachment(RoutingContext context) {
+        LOGGER.info("getAttachment");
+
+        Integer mailId = Integer.parseInt(context.request().getParam("mailId"));
+        JsonObject request = new JsonObject().put("mailId", mailId);
+
+        LOGGER.info("mailId: "+mailId);
+
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-attachment");
+
+        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
+            if (reply.succeeded()) {
+                JsonObject body = (JsonObject) reply.result().body();
+
+                LOGGER.info("urlpath: "+urlPathTemplate);
+
+
+                context.response().putHeader("Content-Type", "application/json");
+                context.response().end(body.encodePrettily()
+                        .replaceAll("\\\\","")
+                        .replaceAll("\"attachment\" : \\[ \\{","")
+                        .replaceAll("\"data\" : \"","\"data\" : ")
+                        .replaceAll("\"uri\":","\"uri\" :\""+ urlPathTemplate)
+                        .replaceAll("images/\"", "images/")
+                        .replaceAll("template/\"", "template/")
+                        .replaceAll("}]}]\"","}]}]")
+                        .replaceAll("\\} \\]","")
+                        .replaceAll("]\"","]"));
+
+
+            } else {
+                context.fail(reply.cause());
+            }
+        });
+    }
+
+    private void pushNotification(RoutingContext context) {
+        JsonObject request = context.getBodyAsJson();
+
+        LOGGER.info("post push: "+request);
+
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "post-notif");
+
+        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
+            if (reply.succeeded()) {
+                JsonObject body = (JsonObject) reply.result().body();
+                context.response().putHeader("Content-Type", "application/json");
+                context.response().end(body.encode());
+
+            } else {
+                context.fail(reply.cause());
+            }
+        });
+
+    }
+
+    private void postReport(RoutingContext context) {
+        JsonObject request = context.getBodyAsJson();
+        JsonObject jsonData = request.getJsonObject("data");
+
+       // LOGGER.info("jsondata: "+jsonData);
+        String imgBase64 = jsonData.getString("evidence");
+        String unor = jsonData.getString("org");
+        String pegaNip = jsonData.getString("username");
+
+        LOGGER.info("json: "+unor+"/"+pegaNip);
+
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int year  = localDate.getYear();
+        int month = localDate.getMonthValue();
+        int day   = localDate.getDayOfMonth();
+
+
+        String random = randomAlphaNumeric(8);
+
+        LOGGER.info("random: "+random);
+
+        String fileName = unor+pegaNip+year+month+day+"_"+random+".png";
+
+        String filePath = fileStore+pegaNip+"/"+fileName;
+
+
+        File file = new File(filePath);
+
+        // add filename attribute to json
+        request.put("filename", fileName);
+
+        //LOGGER.info("newRequest before: "+request);
+
+        // use blocking handler for handle blocking process
+        vertx.<String>executeBlocking(future -> {
+
+            File fileDirectory = new File(fileStore+pegaNip);
+
+            if (!fileDirectory.exists()){
+                fileDirectory.mkdir();
+                LOGGER.info("directory created");
+            }
+
+            // decode base64 encoded image
+
+            try (FileOutputStream imageOutFile = new FileOutputStream(file)) {
+
+
+
+                if (!file.exists()){
+                    file.createNewFile();
+                }
+                // Converting a Base64 String into Image byte array
+                byte[] imageByteArray = Base64.getDecoder().decode(imgBase64);
+
+                imageOutFile.write(imageByteArray);
+            } catch (FileNotFoundException e) {
+                LOGGER.info("Image not found "+e);
+            } catch (IOException ioe) {
+                LOGGER.info("Exception while reading the Image " + ioe);
+            }
+
+            String result="succeed";
+
+            future.complete(result);
+
+        }, res -> {
+
+            if (res.succeeded()) {
+              //  LOGGER.info("file created");
+
+            //    LOGGER.info("newRequest:"+request);
+
+                DeliveryOptions options = new DeliveryOptions().addHeader("action", "post-report");
+
+                vertx.eventBus().send(epimDbQueue,request, options, reply -> {
+                    if (reply.succeeded()) {
+                        JsonObject body = (JsonObject) reply.result().body();
+                        context.response().putHeader("Content-Type", "application/json");
+                        context.response().end(body.encode());
+
+                    } else {
+                        context.fail(reply.cause());
+                    }
+                });
+
+            } else {
+                res.failed();
+                //context.fail(reply.cause());
+            }
+        });
+
+
+    }
+
+    private void getGraphMail(RoutingContext context) {
+        LOGGER.info("getGraphMail");
+
+        String pegaNip = context.request().getParam("pegaNip");
+        JsonObject request = new JsonObject().put("pegaNip", pegaNip);
+
+        LOGGER.info("pegaNip: "+pegaNip);
+
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-graph-mail");
+
+        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
+            if (reply.succeeded()) {
+                JsonObject body = (JsonObject) reply.result().body();
+                context.response().putHeader("Content-Type", "application/json");
+                context.response().end(body.encode());
+
+            } else {
+                context.fail(reply.cause());
+            }
+        });
+    }
+
+    private void disposeStaff(RoutingContext context) {
+        JsonObject request = context.getBodyAsJson();
+
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "post-delete-staff");
+
+        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
+            if (reply.succeeded()) {
+                JsonObject body = (JsonObject) reply.result().body();
+                context.response().putHeader("Content-Type", "application/json");
+                context.response().end(body.encode());
+
+            } else {
+                context.fail(reply.cause());
+            }
+        });
+    }
+
+
+    private void getEmpTree(RoutingContext context) {
+        String pegaId = context.request().getParam("pegaId");
+        JsonObject request = new JsonObject().put("pegaId", pegaId);
+
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-emp-tree");
+        vertx.eventBus().send(epimDbQueue, request, options, reply -> {
+            if (reply.succeeded()) {
+                JsonObject body = (JsonObject) reply.result().body();
+                context.response().putHeader("Content-Type", "application/json");
+                context.response().end(body.encodePrettily().replaceAll("\\\\", "").replaceAll("\"emp\" : \\[ \\{", "")
+                        .replaceAll("\"data\" : \"", "\"data\" : ").replaceAll("}]}]\"", "}]}]")
+                        .replaceAll("children1","children")
+                        .replaceAll("children2", "children")
+                        .replaceAll("children3", "children")
+                        .replaceAll("\\} \\]", "").replaceAll("\"children\":null\\}\\]\"", "\"children\":null\\}\\]"));
+            } else {
+                context.fail(reply.cause());
+            }
+        });
+    }
+
     private void getMailTo(RoutingContext context) {
-        String mailId = context.request().getParam("mailId");
+        Integer mailId = Integer.parseInt(context.request().getParam("mailId"));
         JsonObject request = new JsonObject().put("mailId", mailId);
 
         DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-mail-to");
@@ -194,10 +656,11 @@ public class HttpServerVerticle extends AbstractVerticle {
             if (reply.succeeded()) {
                 JsonObject body = (JsonObject) reply.result().body();
                 context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encode().replaceAll("\\\\","")
-                        //.replaceAll("\"data\":\"","\"data\":")
-                        .replaceAll("\\{\"mail\":\\[\\{\"data\":\"","{\"data\":")
-                        .replaceAll("]\"}]}","]}"));
+                context.response().end(body.encodePrettily().replaceAll("\\\\","")
+                 .replaceAll("\"mail\" : \\[ \\{","")
+                        .replaceFirst("\"\\[\"","[")
+                        .replaceFirst("\"\\]\"","]")
+                        .replaceAll("\"staff\":null","\"staff\":\\[\\]"));
             } else {
                 context.fail(reply.cause());
             }
@@ -206,30 +669,39 @@ public class HttpServerVerticle extends AbstractVerticle {
 
     private void getMail(RoutingContext context) {
 
-        String nip = context.request().getParam("nip");
-        String type = context.request().getParam("type");
-        JsonObject request = new JsonObject().put("nip", nip).put("type",type);
+        LOGGER.info("/getMail");
+        String username = context.request().getParam("username");
+        String mailType = context.request().getParam("mailType");
+        LOGGER.info("username getMail :"+username+"/"+mailType);
+
+
+        JsonObject request = new JsonObject().put("username", username).put("mailType",mailType);
+
 
         DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-mail");
         vertx.eventBus().send(epimDbQueue, request, options, reply -> {
             if (reply.succeeded()) {
                 JsonObject body = (JsonObject) reply.result().body();
                 context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encode().replaceAll("\\\\","")
-                        //.replaceAll("\"data\":\"","\"data\":")
-                        .replaceAll("\\{\"mail\":\\[\\{\"data\":\"","{\"data\":")
-                        .replaceAll("]\"}]}","]}"));
+                context.response().end(body.encodePrettily());
+                LOGGER.info(body.encodePrettily()
+                        .replaceFirst("\"mail\" : \\[","\"mail\":")
+                        .replaceFirst("]}","}"));
             } else {
+                LOGGER.info("route get mail failed");
                 context.fail(reply.cause());
             }
         });
     }
 
-    private void tindakLanjutHandler(RoutingContext context) {
-        JsonObject disposNotif = context.getBodyAsJson();
-        JsonObject request = new JsonObject().put("data", disposNotif);
 
-        DeliveryOptions options = new DeliveryOptions().addHeader("action", "post-tindak-lanjut");
+
+
+    private void disposisiTo(RoutingContext context) {
+
+        JsonObject request = context.getBodyAsJson();
+
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "post-disposisi");
 
         vertx.eventBus().send(epimDbQueue,request, options, reply -> {
             if (reply.succeeded()) {
@@ -243,207 +715,85 @@ public class HttpServerVerticle extends AbstractVerticle {
         });
     }
 
-    private void getStaffLev3Handler(RoutingContext context) {
-        String unor = context.request().getParam("unor");
 
-        JsonObject request = new JsonObject().put("unor", unor);
-
-
-        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-staff-lev3");
-
-        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
-            if (reply.succeeded()) {
-                JsonObject body = (JsonObject) reply.result().body();
-                context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encode().replaceAll("\\\\","")
-                        //.replaceAll("\"data\":\"","\"data\":")
-                        .replaceAll("\\{\"unor\":\\[\\{\"data\":\"","{\"data\":")
-                        .replaceAll("]\"}]}","]}"));
-            } else {
-                context.fail(reply.cause());
-            }
-        });
-    }
-
-    private void getStaffLev2Handler(RoutingContext context) {
-        String unor = context.request().getParam("unor");
-
-        JsonObject request = new JsonObject().put("unor", unor);
-
-
-        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-staff-lev2");
-
-        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
-            if (reply.succeeded()) {
-                JsonObject body = (JsonObject) reply.result().body();
-                context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encode().replaceAll("\\\\","")
-                        //.replaceAll("\"data\":\"","\"data\":")
-                        .replaceAll("\\{\"unor\":\\[\\{\"data\":\"","{\"data\":")
-                        .replaceAll("]\"}]}","]}"));
-            } else {
-                context.fail(reply.cause());
-            }
-        });
-    }
-
-    private void disposNotifHandler(RoutingContext context) {
-
-        JsonObject disposNotif = context.getBodyAsJson();
-        JsonObject request = new JsonObject().put("data", disposNotif);
-
-        DeliveryOptions options = new DeliveryOptions().addHeader("action", "post-dispos-notif");
-
-        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
-            if (reply.succeeded()) {
-                JsonObject body = (JsonObject) reply.result().body();
-                context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encode());
-
-            } else {
-                context.fail(reply.cause());
-            }
-        });
-    }
-
-    private void staffDisposHandler(RoutingContext context) {
-        String unor = context.request().getParam("unor");
-        JsonObject request = new JsonObject().put("unor", unor);
-
-
-        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-staff");
-
-        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
-            if (reply.succeeded()) {
-                JsonObject body = (JsonObject) reply.result().body();
-                context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encode());
-            } else {
-                context.fail(reply.cause());
-            }
-        });
-    }
-
-    private void getStaffDisposisiHandler(RoutingContext context) {
-        String unor = context.request().getParam("unor");
-        String level = context.request().getParam("level");
-        JsonObject request = new JsonObject().put("unor", unor).put("level",level);
-
-
-
-        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-staff-lev1");
-
-        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
-            if (reply.succeeded()) {
-                JsonObject body = (JsonObject) reply.result().body();
-                context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encode().replaceAll("\\\\","")
-                        //.replaceAll("\"data\":\"","\"data\":")
-                        .replaceAll("\\{\"unor\":\\[\\{\"data\":\"","{\"data\":")
-                        .replaceAll("]\"}]}","]}"));
-            } else {
-                context.fail(reply.cause());
-            }
-        });
-    }
-
-    private void flowDisposHandler(RoutingContext context) {
-        String idSurat = context.request().getParam("idsurat");
-        JsonObject request = new JsonObject().put("idsurat", idSurat);
-
-
-        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-flow-dispos");
-
-        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
-            if (reply.succeeded()) {
-                JsonObject body = (JsonObject) reply.result().body();
-                context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encode());
-            } else {
-                context.fail(reply.cause());
-            }
-        });
-    }
-
-    private void dashbordHandler(RoutingContext context) {
-        String nip = context.request().getParam("nip");
-        JsonObject request = new JsonObject().put("nip", nip);
-
-
-        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-dashboard");
-
-        vertx.eventBus().send(epimDbQueue,request, options, reply -> {
-            if (reply.succeeded()) {
-                JsonObject body = (JsonObject) reply.result().body();
-                context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encode());
-            } else {
-                context.fail(reply.cause());
-            }
-        });
-    }
 
     private void loginHandler(RoutingContext context) {
-        String userName = context.request().getParam("username");
-        String password = context.request().getParam("password");
+        JsonObject credential = context.getBodyAsJson();
+       // System.out.println("login credential:" + credential.getString("username"));
 
-        System.out.println("login handler");
+        JsonObject request = new JsonObject().put("session", credential);
 
+        String profileImg = credential.getString("username");
 
-        JsonObject request = new JsonObject().put("username", userName)
-                .put("password",password);
-
-        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-user");
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-user-login");
 
         vertx.eventBus().send(epimDbQueue,request, options, reply -> {
             if (reply.succeeded()) {
 
+                String token = jwtAuth.generateToken(
+                        new JsonObject()
+                                .put("token",context.request().getHeader("login")),
+                        new JWTOptions().setExpiresInMinutes((int) 200L)
+                );
 
-                JsonObject body = (JsonObject) reply.result().body();
-                context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encode().replaceAll("\\[","")
-                        .replaceAll("]",""));
+
+                JsonObject body = (JsonObject)reply.result().body();
+
+
+                if (!body.getBoolean("succeed")){
+
+
+                    body.put("succeed",false);
+                    // body.remove("db-reply");
+                    context.response().putHeader("Content-Type", "application/json");
+
+                    context.response().end(body.encodePrettily());
+                } else{
+                    // LOGGER.info("pathImage : "+ avatarPath+ profileImg + ".png");
+                    body.put("token",token);
+                     body.put("avatar","http://localhost:8085/eoffice/public/images/avatar.png");
+                  //  body.put("succeed","true");
+                    context.response().putHeader("Content-Type", "application/json");
+
+                    context.response().end(body.encodePrettily().replaceAll("\\\\","")
+                            .replaceAll("\\\\","")
+                            .replaceFirst("\"\\[","[")
+                            .replaceFirst("\"data\" : \\[","\"data\":")
+                            .replaceFirst("],",",")
+                            .replaceFirst("\"\\]\"","]")
+                            .replaceAll("}]}]\"","}]}]")
+                            .replaceAll("\\} \\]", ""));
+
+                    LOGGER.info("profile: "+body.encodePrettily().replaceAll("\\\\","")
+                            .replaceAll("\\\\","")
+                            .replaceFirst("\"\\[","[")
+                            .replaceFirst("\"data\": \\[","\"data\":")
+                            .replaceFirst("\"\\]\"","]")
+                            .replaceFirst("],",",")
+                            .replaceAll("}]}]\"","}]}]")
+                            .replaceAll("\\} \\]", ""));
+
+                }
+
+
+
+
+
             } else {
                 context.fail(reply.cause());
             }
         });
     }
 
-    private void inboxHandler(RoutingContext context) {
 
-        String nip = context.request().getParam("nip");
-        JsonObject request = new JsonObject().put("nip", nip);
-
-        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-inbox-byuserid");
-        vertx.eventBus().send(epimDbQueue, request, options, reply -> {
-            if (reply.succeeded()) {
-                JsonObject body = (JsonObject) reply.result().body();
-                context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encode()
-                        .replaceAll("\\\\","")
-                        .replaceAll(":\"\\{",":{")
-                        .replaceAll("\"\\},\\{\"data\"","},{\"data\""));
-            } else {
-                context.fail(reply.cause());
-            }
-        });
+    private String randomAlphaNumeric(int count) {
+        StringBuilder builder = new StringBuilder();
+        while (count-- != 0) {
+            int character = (int)(Math.random()*ALPHA_NUMERIC_STRING.length());
+            builder.append(ALPHA_NUMERIC_STRING.charAt(character));
+        }
+        return builder.toString();
     }
 
-    // (...)
-    // end::start[]
 
-    private void indexHandler(RoutingContext context) {
-
-        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-test");
-
-        vertx.eventBus().send(epimDbQueue, new JsonObject(), options, reply -> {
-            if (reply.succeeded()) {
-                JsonObject body = (JsonObject) reply.result().body();
-                System.out.println("hasil : "+body.getJsonArray("test").getList());
-            } else {
-                context.fail(reply.cause());
-            }
-        });
-    }
-    // end::indexHandler[]
 }

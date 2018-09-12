@@ -6,11 +6,11 @@
 
     <groupId>exa.pim.api</groupId>
     <artifactId>exa-pim-api</artifactId>
-    <version>3.5.0</version>
+    <version>3.5.2</version>
 
     <properties>
-        <vertx.version>3.5.0</vertx.version>
-        <main.verticle>exa.vertx.pim.MainVerticle</main.verticle>
+        <vertx.version>3.5.2</vertx.version>
+        <main.verticle>exa.vertx.office.MainVerticle</main.verticle>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <asyncdriver.version>0.2.21</asyncdriver.version>
     </properties>
@@ -64,29 +64,11 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
-        <!--<dependency>
-            <groupId>com.github.mauricio</groupId>
-            <artifactId>postgresql-async_2.12</artifactId>
-            <version>${asyncdriver.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>io.netty</groupId>
-                    <artifactId>netty-all</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/postgresql/postgresql-->
-       <!-- <dependency>
-            <groupId>postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>9.1-901-1.jdbc4</version>
-        </dependency>!-->
-        <!-- https://mvnrepository.com/artifact/org.mindrot/jbcrypt -->
-
+        <dependency>
+            <groupId>io.github.jklingsporn</groupId>
+            <artifactId>vertx-push-onesignal</artifactId>
+            <version>1.7</version>
+        </dependency>
         <dependency>
             <groupId>org.mindrot</groupId>
             <artifactId>jbcrypt</artifactId>
@@ -98,11 +80,11 @@
             <artifactId>postgresql</artifactId>
             <version>42.1.4</version>
         </dependency>
-       <!-- <dependency>
-            <groupId>com.julienviet</groupId>
+        <dependency>
+            <groupId>io.reactiverse</groupId>
             <artifactId>reactive-pg-client</artifactId>
-            <version>0.5.0</version>
-        </dependency> -->
+            <version>0.9.0</version>
+        </dependency>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>

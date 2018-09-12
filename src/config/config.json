@@ -1,0 +1,30 @@
+{
+  "api.name": "eoffice",
+  "eoffice.http.address": "localhost",
+  "eoffice.http.port": 8085,
+  "public.static":{
+    "assets.images": "http://10.0.2.2:8085/eoffice/assets/images/",
+    "assets.sharedoc": "http://10.0.2.2:8085/eoffice/assets/dokumen/",
+    "assets.laporan": "http://10.0.2.2:8085/eoffice/assets/laporan/",
+    "assets.template": "http://10.0.2.2:8085/eoffice/assets/template/"
+  },
+  "upload.files":{
+    "images": "/assets/images/",
+    "sharedoc": "/assets/dokumen/",
+    "laporan": "/assets/laporan/",
+    "template": "/assets/template/"
+  },
+  "database" : {
+    "postgres.host": "localhost",
+    "postgres.database": "db-office",
+    "postgres.port": "5432",
+    "postgres.user": "postgres",
+    "postgres.password": "admin",
+    "postgres.max_pool_size": 15
+  },
+  "OneSignal" : {
+    "push.id":"f95f68a6-ed64-4b75-8d9d-79716a73d5ac",
+    "push.key":"MThiOTYzOTEtMjg0YS00NjhiLWJiMTMtYjlmOGJhNmJkMjJi"
+  },
+  "epimdb.queue":"eoffice.bus"
+}
