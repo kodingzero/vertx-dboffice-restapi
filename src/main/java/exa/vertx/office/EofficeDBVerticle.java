@@ -469,9 +469,11 @@ public class EofficeDBVerticle extends AbstractVerticle {
                             if (BCrypt.checkpw(pwd,candidate)) {
                                 JsonArray arr = new JsonArray();
 
+                                message.reply(new JsonObject().put("succeed",true).put("message", "authenticated"));
 
+                                // don't use script below, cause we just one way to check authenticate user
                                 // borrow one connection from the pool
-                                dbConn.preparedQuery(sqlQueries.get(SqlQuery.GET_USER), params, resProfile -> {
+                               /* dbConn.preparedQuery(sqlQueries.get(SqlQuery.GET_USER), params, resProfile -> {
                                     if (resProfile.succeeded()) {
 
                                         PgRowSet rowProfile = resProfile.result();
@@ -498,7 +500,7 @@ public class EofficeDBVerticle extends AbstractVerticle {
                                         dbConn.close();
 
                                     }
-                                });
+                                }); */
 
 
 

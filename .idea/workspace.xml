@@ -2,63 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dffdf1e-5c4f-4e8f-bb47-72fb99b1a06f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactiverse_reactive_pg_client_0_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/util/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_15_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_15_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_dns_4_1_15_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_15_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_15_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_15_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_15_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_15_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_15_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_15_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_4_1_15_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_15_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_auth_common_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_auth_jwt_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_bridge_common_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_codegen_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_core_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_jdbc_client_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_jwt_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_service_proxy_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_sql_common_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_unit_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_web_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_web_client_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_web_common_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_vertx_vertx_web_templ_freemarker_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exa-pim-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/exa-pim-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redeploy.bat" beforeDir="false" afterPath="$PROJECT_DIR$/redeploy.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-keystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/server-keystore.jks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exa/test/AuthJwt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exa/test/JsonVerticle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/EOfficeDBVerticle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/pim/Authentication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/pim/MainVerticle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db-eoffice-sql.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/eoffice-db-sql.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db-eoffice-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db-eoffice-prod.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db-eoffice-sql.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/eoffice-db-sql.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/test/AuthJwt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/test/JsonVerticle.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$ErrorCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$ErrorCodes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$SqlQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$SqlQuery.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle.class" afterDir="false" />
@@ -67,40 +13,32 @@
       <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$ErrorCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$ErrorCodes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$SqlQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$SqlQuery.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/pim/Authentication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/pim/MainVerticle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthJDBC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyChatRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyChatRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyHelloWorldRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyHelloWorldRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRealtimeRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRealtimeRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRestRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRestRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovySessionsRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovySessionsRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyTemplatingRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyTemplatingRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthJDBC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSChatRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSChatRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSHelloWorldRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSHelloWorldRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSRealtimeRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSRealtimeRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSSessionsRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSSessionsRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSTemplatingRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSTemplatingRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthJDBC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyChatRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyChatRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyHelloWorldRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyHelloWorldRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyRealtimeRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyRealtimeRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubySessionsRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubySessionsRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyTemplatingRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyTemplatingRunner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/jackson-annotations-2.9.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/jackson-core-2.9.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/jackson-databind-2.9.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/netty-buffer-4.1.15.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/netty-codec-4.1.15.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/netty-codec-dns-4.1.15.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/netty-codec-http-4.1.15.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/netty-codec-http2-4.1.15.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/netty-codec-socks-4.1.15.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/netty-common-4.1.15.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/netty-handler-4.1.15.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/netty-handler-proxy-4.1.15.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/netty-resolver-4.1.15.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/netty-resolver-dns-4.1.15.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/netty-transport-4.1.15.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-auth-common-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-auth-jwt-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-bridge-common-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-codegen-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-core-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-jdbc-client-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-jwt-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-service-proxy-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-sql-common-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-unit-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-web-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-web-client-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-web-common-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/vertx-web-templ-freemarker-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/exa-pim-api-3.5.0-fat.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/exa-pim-api-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/exa-pim-api-3.5.2-fat.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/exa-pim-api-3.5.2.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -115,15 +53,89 @@
     <session id="-1146730692">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.37" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="4" />
+          <entry key="json" value="1" />
+          <entry key="properties" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="4" />
+          <entry key="JSON" value="1" />
+          <entry key="Properties" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="168" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="168" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="774" column="56" selection-start-line="774" selection-start-column="56" selection-end-line="774" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config/config.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="20" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="623" selection-start-line="623" selection-end-line="623" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -162,8 +174,8 @@
       <find>get_share_doc</find>
       <find>data</find>
       <find>loginhandler</find>
-      <find>GET_LOGIN</find>
       <find>getprofile</find>
+      <find>GET_LOGIN</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -248,28 +260,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
-              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
-              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
-              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
-              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
-              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
-              <item name="office" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -324,6 +314,28 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
+              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
+              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
+              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
+              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
+              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
+              <item name="office" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -424,7 +436,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PushNotification">
+  <component name="RunManager" selected="Maven.exa-pim-api [clean]">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -473,20 +485,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PgVertxTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exa.test.postgres.PgVertxTest" />
-      <module name="exa-pim-api" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exa.test.postgres.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PushNotification" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exa.vertx.pim.PushNotification" />
       <module name="exa-pim-api" />
@@ -513,6 +511,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="exa-pim-api [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
@@ -523,18 +546,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Authentication" />
-      <item itemvalue="Application.PgVertxTest" />
       <item itemvalue="Application.JsonArray" />
       <item itemvalue="Application.JsonArrayExample" />
       <item itemvalue="Application.PushNotification" />
+      <item itemvalue="Maven.exa-pim-api [clean]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Maven.exa-pim-api [clean]" />
         <item itemvalue="Application.PushNotification" />
         <item itemvalue="Application.JsonArrayExample" />
         <item itemvalue="Application.JsonArray" />
         <item itemvalue="Application.Authentication" />
-        <item itemvalue="Application.PgVertxTest" />
       </list>
     </recent_temporary>
   </component>
@@ -554,7 +577,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" x="563" y="160" width="240" height="407" id="Project" order="0" visible="true" weight="0.19288956" />
+      <window_info content_ui="combo" x="563" y="160" width="240" height="407" id="Project" order="0" visible="true" weight="0.19591528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -563,13 +586,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3295082" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.39438945" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.8360656" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -580,7 +603,7 @@
       <window_info anchor="right" id="Flutter Inspector" order="6" />
       <window_info anchor="right" id="Flutter Outline" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Maven Projects" order="9" weight="0.09152799" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.27685326" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -665,27 +688,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="188" selection-start-line="4" selection-start-column="188" selection-end-line="4" selection-end-column="188" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="45" column="58" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -696,37 +702,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6851">
-          <caret line="419" column="48" selection-start-line="419" selection-start-column="48" selection-end-line="419" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/util/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/config.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-prod.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+        <state>
+          <caret column="166" selection-start-column="166" selection-end-column="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="468" column="64" selection-start-line="468" selection-start-column="64" selection-end-line="468" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9892">
-          <caret line="637" selection-start-line="637" selection-end-line="637" />
+        <state relative-caret-position="528">
+          <caret line="623" selection-start-line="623" selection-end-line="623" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -735,8 +738,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="108" column="47" lean-forward="true" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="47" />
+        <state relative-caret-position="20">
+          <caret line="774" column="56" selection-start-line="774" selection-start-column="56" selection-end-line="774" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -717,6 +717,7 @@ public class HttpServerVerticle extends AbstractVerticle {
 
 
 
+
     private void loginHandler(RoutingContext context) {
         JsonObject credential = context.getBodyAsJson();
        // System.out.println("login credential:" + credential.getString("username"));
@@ -751,7 +752,7 @@ public class HttpServerVerticle extends AbstractVerticle {
                 } else{
                     // LOGGER.info("pathImage : "+ avatarPath+ profileImg + ".png");
                     body.put("token",token);
-                     body.put("avatar","http://localhost:8085/eoffice/public/images/avatar.png");
+                  //   body.put("avatar","http://localhost:8085/eoffice/public/images/avatar.png");
                   //  body.put("succeed","true");
                     context.response().putHeader("Content-Type", "application/json");
 
