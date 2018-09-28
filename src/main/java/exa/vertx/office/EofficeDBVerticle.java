@@ -447,7 +447,7 @@ public class EofficeDBVerticle extends AbstractVerticle {
         LOGGER.info("user/pwd db: "+user+"/"+pwd+"/"+playerId);
 
 
-        Tuple params = Tuple.of(user);
+        Tuple params = Tuple.of(user,pwd);
         Tuple paramsUpdate = Tuple.of(playerId,user);
 
         dbPool.getConnection(ar1 ->{
@@ -457,67 +457,18 @@ public class EofficeDBVerticle extends AbstractVerticle {
                 dbConn.preparedQuery(sqlQueries.get(SqlQuery.GET_LOGIN),params,res -> {
                     if (res.succeeded()) {
                         PgRowSet rows = res.result();
-                        String candidate=null;
 
-                        if (rows.size()>=1){
+                        if (rows.size()==1){
                             LOGGER.info("rows: "+rows.size());
-                            for (Row row : rows) {
-                                candidate = row.getString("pega_password").replaceFirst("2y", "2a");
-                            }
-                             LOGGER.info("candidate : "+candidate);
-
-                            if (BCrypt.checkpw(pwd,candidate)) {
-                                JsonArray arr = new JsonArray();
-
                                 message.reply(new JsonObject().put("succeed",true).put("message", "authenticated"));
 
-                                // don't use script below, cause we just one way to check authenticate user
-                                // borrow one connection from the pool
-                               /* dbConn.preparedQuery(sqlQueries.get(SqlQuery.GET_USER), params, resProfile -> {
-                                    if (resProfile.succeeded()) {
-
-                                        PgRowSet rowProfile = resProfile.result();
-                                        Json data = null;
-                                        for (Row row : rowProfile) {
-                                            data = row.getJson("data");
-                                        }
-
-                                        arr.add(data.value().toString());
-
-                                        //LOGGER.info(arr.toString());
-
-                                        message.reply(new JsonObject().put("data",arr).put("succeed", true).put("message","authenticated"));
-                                        // release connection and return to the pool
-                                        dbConn.close();
-
-
-
-                                    } else {
-                                        message.reply(new JsonObject().put("succeed", false).put("message","error when get user profile. err: "+res.cause()));
-                                        reportQueryError(message, res.cause());
-                                        // release connection and return to the pool
-
-                                        dbConn.close();
-
-                                    }
-                                }); */
-
-
-
-                            }else{
-                                message.reply(new JsonObject().put("succeed",false).put("message", "user or password not authenticated."));
-                            }
                         } else{
                             message.reply(new JsonObject().put("succeed",false).put("message", "user or password not authenticated."));
                         }
 
-                        //  LOGGER.info("sukses");
-                    //    dbConn.close();
-
                     } else {
                         message.reply(new JsonObject().put("succeed",false).put("message","network connection error."));
                         reportQueryError(message, res.cause());
-                       // dbConn.close();
 
                     }
                 });

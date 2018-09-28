@@ -5,41 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$ErrorCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$ErrorCodes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$SqlQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle$SqlQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/EOfficeDBVerticle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/HttpServerVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/HttpServerVerticle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/MainVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/MainVerticle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$ErrorCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$ErrorCodes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$SqlQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle$SqlQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/office/OfficeDatabaseVerticle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthJDBC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyAuthRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyChatRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyChatRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyHelloWorldRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyHelloWorldRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRealtimeRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRealtimeRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRestRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyRestRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovySessionsRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovySessionsRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyTemplatingRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$GroovyTemplatingRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthJDBC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSAuthRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSChatRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSChatRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSHelloWorldRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSHelloWorldRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSRealtimeRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSRealtimeRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSSessionsRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSSessionsRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSTemplatingRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$JSTemplatingRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthJDBC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyAuthRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyChatRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyChatRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyHelloWorldRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyHelloWorldRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyRealtimeRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyRealtimeRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubySessionsRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubySessionsRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyTemplatingRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner$RubyTemplatingRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exa/vertx/util/Runner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/exa-pim-api-3.5.2-fat.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/exa-pim-api-3.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -53,48 +19,52 @@
     <session id="-1146730692">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.37" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="4" />
+          <entry key="java" value="5" />
           <entry key="json" value="1" />
-          <entry key="properties" value="1" />
+          <entry key="properties" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="4" />
+          <entry key="JAVA" value="5" />
           <entry key="JSON" value="1" />
-          <entry key="Properties" value="1" />
+          <entry key="Properties" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="168" />
+          <entry key="java" value="176" />
+          <entry key="properties" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="168" />
+          <entry key="JAVA" value="176" />
+          <entry key="Properties" value="17" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="663">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,11 +75,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="774" column="56" selection-start-line="774" selection-start-column="56" selection-end-line="774" selection-end-column="56" />
+            <state relative-caret-position="206">
+              <caret line="739" selection-start-line="739" selection-end-line="739" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="189" selection-start-column="189" selection-end-column="189" />
             </state>
           </provider>
         </entry>
@@ -123,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="623" selection-start-line="623" selection-end-line="623" />
+            <state relative-caret-position="85">
+              <caret line="461" column="62" selection-start-line="461" selection-start-column="62" selection-end-line="461" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,8 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get-share</find>
-      <find>push</find>
       <find>disposisi</find>
       <find>INBOX</find>
       <find>fromfile</find>
@@ -176,6 +153,8 @@
       <find>loginhandler</find>
       <find>getprofile</find>
       <find>GET_LOGIN</find>
+      <find>playerId</find>
+      <find>tuple</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -219,8 +198,8 @@
         <option value="$PROJECT_DIR$/src/config/config.json" />
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" />
       </list>
     </option>
   </component>
@@ -260,6 +239,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
+              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
+              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
+              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
+              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
+              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
+              <item name="office" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -314,28 +315,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
-              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
-              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
-              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
-              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
-              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
-              <item name="office" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -577,7 +556,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" x="563" y="160" width="240" height="407" id="Project" order="0" visible="true" weight="0.19591528" />
+      <window_info content_ui="combo" x="563" y="160" width="240" height="407" id="Project" order="0" weight="0.20196672" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -592,7 +571,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.8360656" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.40655738" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -688,13 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="188" selection-start-line="4" selection-start-column="188" selection-end-line="4" selection-end-column="188" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/redeploy.bat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -716,30 +688,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="468" column="64" selection-start-line="468" selection-start-column="64" selection-end-line="468" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="623" selection-start-line="623" selection-end-line="623" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="774" column="56" selection-start-line="774" selection-start-column="56" selection-end-line="774" selection-end-column="56" />
+        <state relative-caret-position="663">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -753,10 +705,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="10200">
+          <caret line="623" selection-start-line="623" selection-end-line="623" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="189" selection-start-column="189" selection-end-column="189" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="739" selection-start-line="739" selection-end-line="739" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="461" column="62" selection-start-line="461" selection-start-column="62" selection-end-line="461" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

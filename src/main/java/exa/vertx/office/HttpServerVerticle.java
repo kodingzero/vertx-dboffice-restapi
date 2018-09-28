@@ -745,15 +745,12 @@ public class HttpServerVerticle extends AbstractVerticle {
 
 
                     body.put("succeed",false);
-                    // body.remove("db-reply");
                     context.response().putHeader("Content-Type", "application/json");
 
                     context.response().end(body.encodePrettily());
                 } else{
-                    // LOGGER.info("pathImage : "+ avatarPath+ profileImg + ".png");
                     body.put("token",token);
-                  //   body.put("avatar","http://localhost:8085/eoffice/public/images/avatar.png");
-                  //  body.put("succeed","true");
+
                     context.response().putHeader("Content-Type", "application/json");
 
                     context.response().end(body.encodePrettily().replaceAll("\\\\","")
