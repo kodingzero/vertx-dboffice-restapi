@@ -8,7 +8,6 @@ import io.vertx.core.Future;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import org.mindrot.jbcrypt.BCrypt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,7 +39,7 @@ public class EofficeDBVerticle extends AbstractVerticle {
     private enum SqlQuery {
         GET_LOGIN,
         UPDATE_PLAYER,
-        GET_USER,
+        GET_USER_PROFILE,
         GET_MAIL,
         GET_MAIL_TO,
         GET_EMP_TREE,
@@ -88,7 +87,7 @@ public class EofficeDBVerticle extends AbstractVerticle {
 
         sqlQueries.put(EofficeDBVerticle.SqlQuery.GET_LOGIN, queriesProps.getProperty("get-user-login"));
         sqlQueries.put(EofficeDBVerticle.SqlQuery.UPDATE_PLAYER, queriesProps.getProperty("update-user-player"));
-        sqlQueries.put(EofficeDBVerticle.SqlQuery.GET_USER, queriesProps.getProperty("get-user-profile"));
+        sqlQueries.put(EofficeDBVerticle.SqlQuery.GET_USER_PROFILE, queriesProps.getProperty("get-user-profile"));
 
 
         /* new query remark with prefix mail*/
@@ -178,6 +177,9 @@ public class EofficeDBVerticle extends AbstractVerticle {
             case "get-user-login":
                 getUserLogin(message);
                 break;
+            case "get-user-profile":
+                getUserProfile(message);
+                break;
             case "get-mail":
                 getMail(message);
                 break;
@@ -229,17 +231,20 @@ public class EofficeDBVerticle extends AbstractVerticle {
     }
 
 
+
     /*   GET METHOD */
 
     private void getMail(Message<JsonObject> message) {
 
-        LOGGER.info("getMail");
+        LOGGER.info("getMail db");
 
         String username = message.body().getString("username");
         String mailType  = message.body().getString("mailType");
-        LOGGER.info("mailId: "+username+"/"+mailType);
+        long limitRow = Long.valueOf(message.body().getString("limitRow"));
+        long nextPage = Long.valueOf(message.body().getString("nextPage"));
 
-        Tuple params = Tuple.of(username,mailType);
+
+        Tuple params = Tuple.of(username,mailType,limitRow,nextPage);
 
         dbPool.preparedQuery(sqlQueries.get(SqlQuery.GET_MAIL), params,res -> {
             if (res.succeeded()) {
@@ -248,6 +253,8 @@ public class EofficeDBVerticle extends AbstractVerticle {
                 rows.forEach(arr::add);
 
                 message.reply(new JsonObject().put("mail", arr));
+
+                LOGGER.info(arr.toString());
 
             } else {
                 LOGGER.error("Failure: " + res.cause().getMessage());
@@ -436,6 +443,33 @@ public class EofficeDBVerticle extends AbstractVerticle {
         });
     }
 
+
+    private void getUserProfile(Message<JsonObject> message) {
+
+        String userName = message.body().getString("userName");
+        Tuple params = Tuple.of(userName);
+
+
+        dbPool.preparedQuery(sqlQueries.get(SqlQuery.GET_USER_PROFILE),params, res -> {
+            if (res.succeeded()) {
+                PgRowSet rows = res.result();
+                JsonArray arr = new JsonArray();
+
+                Json data = null;
+                for (Row row : rows) {
+                    data = row.getJson("data");
+                }
+
+                arr.add(data.value().toString());
+               // LOGGER.info("hasil : "+arr.toString().replaceAll("\\\\",""));
+                message.reply(new JsonObject().put("data",arr));
+
+            } else {
+                reportQueryError(message, res.cause());
+            }
+        });
+    }
+
     private void getUserLogin(Message<JsonObject> message) {
         JsonObject credential = message.body().getJsonObject("session");
 
@@ -460,14 +494,25 @@ public class EofficeDBVerticle extends AbstractVerticle {
 
                         if (rows.size()==1){
                             LOGGER.info("rows: "+rows.size());
-                                message.reply(new JsonObject().put("succeed",true).put("message", "authenticated"));
+                                message.reply(new JsonObject().put("nip",user).put("succeed",true).put("message", "authenticated"));
+
+                                dbConn.preparedQuery(sqlQueries.get(SqlQuery.UPDATE_PLAYER),paramsUpdate,resUpdate ->{
+                                    if (resUpdate.succeeded()){
+                                        LOGGER.info("PlayerId with Nip : "+user+" has been update");
+                                    }else{
+                                        LOGGER.info("Error when update PlayerId with Nip : "+user);
+                                    }
+                                });
+
+                                dbConn.close();
 
                         } else{
                             message.reply(new JsonObject().put("succeed",false).put("message", "user or password not authenticated."));
+                            LOGGER.info("user password not authenticated");
                         }
 
                     } else {
-                        message.reply(new JsonObject().put("succeed",false).put("message","network connection error."));
+                        message.reply(new JsonObject().put("nip",user).put("succeed",false).put("message","network connection error."));
                         reportQueryError(message, res.cause());
 
                     }
@@ -476,7 +521,6 @@ public class EofficeDBVerticle extends AbstractVerticle {
         });
 
     }
-
 
 
 

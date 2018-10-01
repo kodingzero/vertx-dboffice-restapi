@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Base64;
@@ -128,8 +129,8 @@ public class HttpServerVerticle extends AbstractVerticle {
 
 
         // [start new method, cause patching db]
-        apiRouter.get("/getProfile/:username/:password").handler(this::getProfile);
-        apiRouter.get("/getMail/:username/:mailType").handler(this::getMail);
+        apiRouter.get("/getProfile/:username").handler(this::getProfile);
+        apiRouter.get("/getMail/:username/:mailType/:limitRow/:nextPage").handler(this::getMail);
         apiRouter.get("/getMailTo/:mailId").handler(this::getMailTo);
         apiRouter.get("/getEmpTree/:pegaId").handler(this::getEmpTree);
         apiRouter.get("/getGraphMail/:pegaNip").handler(this::getGraphMail);
@@ -183,29 +184,41 @@ public class HttpServerVerticle extends AbstractVerticle {
         LOGGER.info("getProfile");
 
         String userName = context.request().getParam("username");
-        String password = context.request().getParam("password");
+       // String password = context.request().getParam("password");
 
 
-        JsonObject request = new JsonObject().put("userName", userName).put("password",password);
+        JsonObject request = new JsonObject().put("userName", userName);
+
+        LOGGER.info("getProfile : "+userName);
 
 
-        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-profile");
+        ;DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-user-profile");
 
         vertx.eventBus().send(epimDbQueue, request, options, reply -> {
             if (reply.succeeded()) {
                 JsonObject body = (JsonObject) reply.result().body();
 
-                LOGGER.info("urlPathDoc: " + urlPathDoc);
 
                 context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encodePrettily().replaceAll("\\\\","")
+              //  context.response().end(body.toString());
+               context.response().end(body.encodePrettily().replaceAll("\\\\","")
                         .replaceAll("\\\\","")
                         .replaceFirst("\"\\[","[")
                         .replaceFirst("\"data\" : \\[","\"data\":")
                         .replaceFirst("],",",")
                         .replaceFirst("\"\\]\"","]")
                         .replaceAll("}]}]\"","}]}]")
+                       .replaceAll("}]}] ]","}]}]")
                         .replaceAll("\\} \\]", ""));
+               LOGGER.info(body.encodePrettily().replaceAll("\\\\","")
+                       .replaceAll("\\\\","")
+                       .replaceFirst("\"\\[","[")
+                       .replaceFirst("\"data\" : \\[","\"data\":")
+                       .replaceFirst("],",",")
+                       .replaceFirst("\"\\]\"","]")
+                       .replaceAll("}]}]\"","}]}]")
+                       .replaceAll("}]}] ]","}]}]")
+                       .replaceAll("\\} \\]", ""));
 
             } else {
                 context.fail(reply.cause());
@@ -672,10 +685,18 @@ public class HttpServerVerticle extends AbstractVerticle {
         LOGGER.info("/getMail");
         String username = context.request().getParam("username");
         String mailType = context.request().getParam("mailType");
-        LOGGER.info("username getMail :"+username+"/"+mailType);
+        String limitRow = context.request().getParam("limitRow");
+        String nextPage = context.request().getParam("nextPage");
 
 
-        JsonObject request = new JsonObject().put("username", username).put("mailType",mailType);
+
+        //Integer limit = Integer.parseInt(context.request().getParam("limitRow"));
+        //LOGGER.info("limit: "+limit);
+
+        LOGGER.info("getMail http :"+username+"/"+mailType+"/"+limitRow+"/"+nextPage);
+
+
+        JsonObject request = new JsonObject().put("username", username).put("mailType",mailType).put("limitRow",limitRow).put("nextPage",nextPage);
 
 
         DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-mail");
