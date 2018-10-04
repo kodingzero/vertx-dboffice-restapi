@@ -250,14 +250,22 @@ public class EofficeDBVerticle extends AbstractVerticle {
             if (res.succeeded()) {
                 PgRowSet rows = res.result();
                 JsonArray arr = new JsonArray();
-                rows.forEach(arr::add);
+                Json data = null;
+                for (Row row : rows) {
+                    if (row.getJson("data")!= null){
 
-                message.reply(new JsonObject().put("mail", arr));
+                        data = row.getJson("data");
+                        arr.add(data.value().toString());
+                    }
 
-                LOGGER.info(arr.toString());
+                }
+               //arr.add(data.value().toString());
+                message.reply(new JsonObject().put("data",arr.toString()));
+
 
             } else {
-                LOGGER.error("Failure: " + res.cause().getMessage());
+                reportQueryError(message, res.cause());
+               // message.reply(new JsonObject().put("data","reach end of data"));
             }
         });
     }
@@ -433,7 +441,7 @@ public class EofficeDBVerticle extends AbstractVerticle {
                 }
 
                 arr.add(data.value().toString());
-                message.reply(new JsonObject().put("attachment",arr.toString()));
+                message.reply(new JsonObject().put("data",arr.toString()));
 
                 //message.reply(new JsonObject().put("attachment", arr));
 

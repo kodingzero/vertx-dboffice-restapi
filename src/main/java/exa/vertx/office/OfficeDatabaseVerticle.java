@@ -90,7 +90,7 @@ public class OfficeDatabaseVerticle extends AbstractVerticle {
         if (queriesFile != null) {
             queriesInputStream = new FileInputStream(queriesFile);
         } else {
-            queriesInputStream = getClass().getResourceAsStream("/db-eoffice-prod.properties");
+            queriesInputStream = getClass().getResourceAsStream("/db-eoffice-old.properties");
         }
 
         Properties queriesProps = new Properties();

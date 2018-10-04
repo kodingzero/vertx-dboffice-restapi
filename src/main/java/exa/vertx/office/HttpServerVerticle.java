@@ -35,9 +35,9 @@ public class HttpServerVerticle extends AbstractVerticle {
     public static final String PUBLIC_IMAGES = "public.images";
     public static final String PROFILE_IMAGES = "public.profile";
     public static final String FILE_LOCATION="file.location";
-    public static final String PUBLIC_ASSETS_DOKUMEN="public.assets.sharedoc";
-    public static final String PUBLIC_ASSETS_LAPORAN="public.assets.laporan";
-    public static final String PUBLIC_ASSETS_TEMPLATE="public.assets.template";
+    public static final String PUBLIC_ASSETS_DOKUMEN="assets.sharedoc";
+    public static final String PUBLIC_ASSETS_LAPORAN="assets.laporan";
+    public static final String PUBLIC_ASSETS_TEMPLATE="assets.template";
     private static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private static final int DEFAULT_PORT = 8085;
 
@@ -55,13 +55,13 @@ public class HttpServerVerticle extends AbstractVerticle {
 
         epimDbQueue = config().getString(CONFIG_APIDB_QUEUE, "epimdb.queue");
 
-        urlPath= config().getString(PUBLIC_IMAGES,"public.images");
+        urlPath= config().getJsonObject("public").getString(PUBLIC_IMAGES,"assets.images");
 
-        urlPathDoc = config().getString(PUBLIC_ASSETS_DOKUMEN, "public.assets.document");
+        urlPathDoc = config().getJsonObject("public").getString(PUBLIC_ASSETS_DOKUMEN, "assets.document");
 
-        urlPathLaporan = config().getString(PUBLIC_ASSETS_LAPORAN, "public.assets.laporan");
+        urlPathLaporan = config().getJsonObject("public").getString(PUBLIC_ASSETS_LAPORAN, "assets.laporan");
         
-        urlPathTemplate = config().getString(PUBLIC_ASSETS_TEMPLATE, "public.assets.template");
+        urlPathTemplate = config().getJsonObject("public").getString(PUBLIC_ASSETS_TEMPLATE, "assets.template");
 
         String avatarPath = config().getString(PROFILE_IMAGES,"public.profiles");
 
@@ -162,7 +162,7 @@ public class HttpServerVerticle extends AbstractVerticle {
 
 
         router.mountSubRouter("/eoffice/api", apiRouter);
-        router.mountSubRouter("/eoffice/static",apiAsset);
+        router.mountSubRouter("/eoffice/",apiAsset);
 
 
 
@@ -462,19 +462,30 @@ public class HttpServerVerticle extends AbstractVerticle {
                 JsonObject body = (JsonObject) reply.result().body();
 
                 LOGGER.info("urlpath: "+urlPathTemplate);
-
+                //body.put("url",urlPathTemplate);
 
                 context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encodePrettily()
+                context.response().end(body.encodePrettily().replaceAll("\\\\","")
+                        .replaceAll("\"data\":\"\\[","\"data\":")
+                        .replaceAll("\"\\[\"\\[","[")
+                        .replaceFirst("],",",")
+                        .replaceAll("\"uri\":","\"uri\" :\""+ urlPathTemplate)
+                        .replaceAll("/\"","/")
+                        .replaceFirst("\"\\]\"","]")
+                        .replaceAll("}]}]\"","}]}]")
+                        .replaceAll("}]}] ]","}]}]")
+                        .replaceAll("\\}\\]\\]","}]")
+                        .replaceAll("\\} \\]", ""));
+              /*  context.response().end(body.encodePrettily()
                         .replaceAll("\\\\","")
-                        .replaceAll("\"attachment\" : \\[ \\{","")
+                        .replaceAll("\"data\" : \\[ \\{","")
                         .replaceAll("\"data\" : \"","\"data\" : ")
                         .replaceAll("\"uri\":","\"uri\" :\""+ urlPathTemplate)
                         .replaceAll("images/\"", "images/")
                         .replaceAll("template/\"", "template/")
                         .replaceAll("}]}]\"","}]}]")
                         .replaceAll("\\} \\]","")
-                        .replaceAll("]\"","]"));
+                        .replaceAll("]\"","]"));*/
 
 
             } else {
@@ -688,11 +699,6 @@ public class HttpServerVerticle extends AbstractVerticle {
         String limitRow = context.request().getParam("limitRow");
         String nextPage = context.request().getParam("nextPage");
 
-
-
-        //Integer limit = Integer.parseInt(context.request().getParam("limitRow"));
-        //LOGGER.info("limit: "+limit);
-
         LOGGER.info("getMail http :"+username+"/"+mailType+"/"+limitRow+"/"+nextPage);
 
 
@@ -704,12 +710,24 @@ public class HttpServerVerticle extends AbstractVerticle {
             if (reply.succeeded()) {
                 JsonObject body = (JsonObject) reply.result().body();
                 context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encodePrettily());
-                LOGGER.info(body.encodePrettily()
-                        .replaceFirst("\"mail\" : \\[","\"mail\":")
-                        .replaceFirst("]}","}"));
+
+
+
+                context.response().end(body.encodePrettily().replaceAll("\\\\","")
+                        .replaceAll("\"data\":\"\\[","\"data\":")
+                        .replaceAll("\"\\[\"\\[","[")
+                        .replaceFirst("],",",")
+                        .replaceFirst("\"\\]\"","]")
+                        .replaceAll("}]}]\"","}]}]")
+                        .replaceAll("}]}] ]","}]}]")
+                        .replaceAll("\\}\\]\\]","}]")
+                        .replaceAll("\\} \\]", ""));
+
+
+
             } else {
                 LOGGER.info("route get mail failed");
+
                 context.fail(reply.cause());
             }
         });
