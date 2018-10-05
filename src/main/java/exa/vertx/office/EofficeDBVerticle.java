@@ -286,7 +286,7 @@ public class EofficeDBVerticle extends AbstractVerticle {
                 }
 
                 arr.add(data.value().toString());
-                message.reply(new JsonObject().put("mail",arr.toString()));
+                message.reply(new JsonObject().put("data",arr.toString()));
 
             } else {
                 reportQueryError(message, res.cause());

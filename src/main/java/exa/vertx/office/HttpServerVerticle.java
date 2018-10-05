@@ -660,7 +660,8 @@ public class HttpServerVerticle extends AbstractVerticle {
                 JsonObject body = (JsonObject) reply.result().body();
                 context.response().putHeader("Content-Type", "application/json");
                 context.response().end(body.encodePrettily().replaceAll("\\\\", "").replaceAll("\"emp\" : \\[ \\{", "")
-                        .replaceAll("\"data\" : \"", "\"data\" : ").replaceAll("}]}]\"", "}]}]")
+                        .replaceAll("\"data\" : \"", "\"data\" : ")
+                        .replaceAll("}]}]\"", "}]}]")
                         .replaceAll("children1","children")
                         .replaceAll("children2", "children")
                         .replaceAll("children3", "children")
@@ -681,9 +682,12 @@ public class HttpServerVerticle extends AbstractVerticle {
                 JsonObject body = (JsonObject) reply.result().body();
                 context.response().putHeader("Content-Type", "application/json");
                 context.response().end(body.encodePrettily().replaceAll("\\\\","")
-                 .replaceAll("\"mail\" : \\[ \\{","")
+                 .replaceAll("\"data\" : \\[ \\{","")
+                        .replaceAll("\"data\":\"\\[","\"data\":")
+                        .replaceAll("\"\\[\"\\[","[")
                         .replaceFirst("\"\\[\"","[")
                         .replaceFirst("\"\\]\"","]")
+                        .replaceAll("}]}]]","}]}]")
                         .replaceAll("\"staff\":null","\"staff\":\\[\\]"));
             } else {
                 context.fail(reply.cause());

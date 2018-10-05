@@ -3,10 +3,10 @@
   "eoffice.http.address": "localhost",
   "eoffice.http.port": 8085,
   "public.static":{
-    "assets.images": "http://10.0.2.2:8085/eoffice/assets/images/",
-    "assets.sharedoc": "http://10.0.2.2:8085/eoffice/assets/dokumen/",
-    "assets.laporan": "http://10.0.2.2:8085/eoffice/assets/laporan/",
-    "assets.template": "http://10.0.2.2:8085/eoffice/assets/template/"
+    "assets.images": "http://10.0.3.2:8085/eoffice/assets/images/",
+    "assets.sharedoc": "http://10.0.3.2:8085/eoffice/assets/dokumen/",
+    "assets.laporan": "http://10.0.3.2:8085/eoffice/assets/laporan/",
+    "assets.template": "http://10.0.3.2:8085/eoffice/assets/template/"
   },
   "upload.files":{
     "images": "/storage/upload/",
