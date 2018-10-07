@@ -654,18 +654,21 @@ public class HttpServerVerticle extends AbstractVerticle {
         String pegaId = context.request().getParam("pegaId");
         JsonObject request = new JsonObject().put("pegaId", pegaId);
 
+        LOGGER.info("getEmpTree HTTP");
+
         DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-emp-tree");
         vertx.eventBus().send(epimDbQueue, request, options, reply -> {
             if (reply.succeeded()) {
                 JsonObject body = (JsonObject) reply.result().body();
                 context.response().putHeader("Content-Type", "application/json");
-                context.response().end(body.encodePrettily().replaceAll("\\\\", "").replaceAll("\"emp\" : \\[ \\{", "")
-                        .replaceAll("\"data\" : \"", "\"data\" : ")
-                        .replaceAll("}]}]\"", "}]}]")
+                context.response().end(body.encodePrettily().replaceAll("\\\\", "")
+                        .replaceAll("\"data\" : \"\\[\"","\"data\" : ")
+                        .replaceAll("}]}]}]\"]\"", "}]}]}]")
                         .replaceAll("children1","children")
                         .replaceAll("children2", "children")
                         .replaceAll("children3", "children")
-                        .replaceAll("\\} \\]", "").replaceAll("\"children\":null\\}\\]\"", "\"children\":null\\}\\]"));
+                        .replaceAll("\\} \\]", "")
+                        .replaceAll("\"children\":null\\}\\]\"", "\"children\":null\\}\\]"));
             } else {
                 context.fail(reply.cause());
             }

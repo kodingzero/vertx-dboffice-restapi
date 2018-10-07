@@ -24,7 +24,7 @@ public class MainVerticle extends AbstractVerticle {
 
         final JsonObject config = Config.fromFile("src/config/config.json");
 
-       // final JsonObject config = Config.fromFile("./config.json");
+       //final JsonObject config = Config.fromFile("./config.json");
         //LOGGER.info("config:"+config);
 
 

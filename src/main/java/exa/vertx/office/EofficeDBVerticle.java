@@ -328,6 +328,9 @@ public class EofficeDBVerticle extends AbstractVerticle {
 
         Tuple params = Tuple.of(pegaId);
 
+     //   LOGGER.info("getEmpTree DB : "+ pegaId);
+       // LOGGER.info("sql: "+sqlQueries.get(SqlQuery.GET_EMP_TREE));
+
         dbPool.preparedQuery(sqlQueries.get(SqlQuery.GET_EMP_TREE), params, res -> {
             if (res.succeeded()) {
                 PgRowSet rows = res.result();
@@ -339,7 +342,7 @@ public class EofficeDBVerticle extends AbstractVerticle {
                 }
 
                 arr.add(data.value().toString());
-                message.reply(new JsonObject().put("emp",arr.toString()));
+                message.reply(new JsonObject().put("data",arr.toString()));
 
             } else {
                 reportQueryError(message, res.cause());
