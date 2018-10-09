@@ -210,15 +210,7 @@ public class HttpServerVerticle extends AbstractVerticle {
                         .replaceAll("}]}]\"","}]}]")
                        .replaceAll("}]}] ]","}]}]")
                         .replaceAll("\\} \\]", ""));
-               LOGGER.info(body.encodePrettily().replaceAll("\\\\","")
-                       .replaceAll("\\\\","")
-                       .replaceFirst("\"\\[","[")
-                       .replaceFirst("\"data\" : \\[","\"data\":")
-                       .replaceFirst("],",",")
-                       .replaceFirst("\"\\]\"","]")
-                       .replaceAll("}]}]\"","}]}]")
-                       .replaceAll("}]}] ]","}]}]")
-                       .replaceAll("\\} \\]", ""));
+
 
             } else {
                 context.fail(reply.cause());
@@ -476,16 +468,7 @@ public class HttpServerVerticle extends AbstractVerticle {
                         .replaceAll("}]}] ]","}]}]")
                         .replaceAll("\\}\\]\\]","}]")
                         .replaceAll("\\} \\]", ""));
-              /*  context.response().end(body.encodePrettily()
-                        .replaceAll("\\\\","")
-                        .replaceAll("\"data\" : \\[ \\{","")
-                        .replaceAll("\"data\" : \"","\"data\" : ")
-                        .replaceAll("\"uri\":","\"uri\" :\""+ urlPathTemplate)
-                        .replaceAll("images/\"", "images/")
-                        .replaceAll("template/\"", "template/")
-                        .replaceAll("}]}]\"","}]}]")
-                        .replaceAll("\\} \\]","")
-                        .replaceAll("]\"","]"));*/
+
 
 
             } else {
@@ -654,7 +637,7 @@ public class HttpServerVerticle extends AbstractVerticle {
         String pegaId = context.request().getParam("pegaId");
         JsonObject request = new JsonObject().put("pegaId", pegaId);
 
-        LOGGER.info("getEmpTree HTTP");
+        //LOGGER.info("getEmpTree HTTP");
 
         DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-emp-tree");
         vertx.eventBus().send(epimDbQueue, request, options, reply -> {
@@ -691,7 +674,8 @@ public class HttpServerVerticle extends AbstractVerticle {
                         .replaceFirst("\"\\[\"","[")
                         .replaceFirst("\"\\]\"","]")
                         .replaceAll("}]}]]","}]}]")
-                        .replaceAll("\"staff\":null","\"staff\":\\[\\]"));
+                        .replaceAll("\"staff\":null","\"staff\":\\[\\]")
+                        .replaceAll("\"staff\":\\[]}]]","\"staff\":\\[]}]"));
             } else {
                 context.fail(reply.cause());
             }
@@ -747,6 +731,8 @@ public class HttpServerVerticle extends AbstractVerticle {
 
         JsonObject request = context.getBodyAsJson();
 
+
+
         DeliveryOptions options = new DeliveryOptions().addHeader("action", "post-disposisi");
 
         vertx.eventBus().send(epimDbQueue,request, options, reply -> {
@@ -754,9 +740,11 @@ public class HttpServerVerticle extends AbstractVerticle {
                 JsonObject body = (JsonObject) reply.result().body();
                 context.response().putHeader("Content-Type", "application/json");
                 context.response().end(body.encode());
+                LOGGER.info(body.encodePrettily());
 
             } else {
                 context.fail(reply.cause());
+                LOGGER.info("error "+reply.cause());
             }
         });
     }
