@@ -412,21 +412,30 @@ public class EofficeDBVerticle extends AbstractVerticle {
 
     private void getReportByMail(Message<JsonObject> message) {
         Integer mailId = message.body().getInteger("mailId");
-        LOGGER.info("getReportByMail : "+mailId);
+        LOGGER.info("getReportByMail db: "+mailId);
 
         Tuple params = Tuple.of(mailId);
+        LOGGER.info(sqlQueries.get(SqlQuery.GET_REPORT_BY_MAIL));
 
-        dbPool.preparedQuery(sqlQueries.get(SqlQuery.GET_REPORT_BY_MAIL), params, res -> {
+        dbPool.preparedQuery(sqlQueries.get(SqlQuery.GET_REPORT_BY_MAIL),params, res -> {
             if (res.succeeded()) {
                 PgRowSet rows = res.result();
                 JsonArray arr = new JsonArray();
-                rows.forEach(arr::add);
-                message.reply(new JsonObject().put("report", arr));
+
+                Json data = null;
+                for (Row row : rows) {
+                    data = row.getJson("data");
+                }
+
+                arr.add(data.value().toString());
+                message.reply(new JsonObject().put("data",arr.toString()));
 
             } else {
                 reportQueryError(message, res.cause());
             }
         });
+
+
     }
 
     private void getAttachment(Message<JsonObject> message) {

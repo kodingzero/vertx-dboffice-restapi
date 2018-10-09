@@ -424,13 +424,13 @@ public class HttpServerVerticle extends AbstractVerticle {
                 context.response().end(body.encodePrettily()
                         .replaceAll("\\\\","")
                         .replaceAll("\"report\" : \\[ \\{","")
-                        .replaceAll("\"data\" : \"","\"data\" : ")
+                       // .replaceAll("\"data\":\"\\[","\"data\":")
+                        .replaceAll("\"data\" : \"\\[\"\\[","\"data\" : [")
                         .replaceAll("\"uri\":","\"uri\" :\""+urlPathLaporan)
                         .replaceAll("images/\"", "images/")
                         .replaceAll("laporan/\"", "laporan/")
-                        .replaceAll("}]}]\"","}]}]")
-                        .replaceAll("\\} \\]","")
-                        .replaceAll("]\"","]"));
+                        .replaceAll("}]\"]\"","}]")
+                        .replaceAll("\"mare_note\":\"sudah selesai\"}]]","\"mare_note\":\"sudah selesaix\"}]"));
 
 
             } else {

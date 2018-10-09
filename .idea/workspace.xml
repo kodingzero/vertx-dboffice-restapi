@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dffdf1e-5c4f-4e8f-bb47-72fb99b1a06f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -16,7 +19,7 @@
     <session id="-1146730692">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="27" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
@@ -36,52 +39,86 @@
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.41" value="2" />
+          <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.52" value="1" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="13" />
+          <entry key="java" value="15" />
           <entry key="json" value="1" />
-          <entry key="properties" value="5" />
+          <entry key="properties" value="6" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="13" />
+          <entry key="JAVA" value="15" />
           <entry key="JSON" value="1" />
-          <entry key="Properties" value="5" />
+          <entry key="Properties" value="6" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4709" />
+          <entry key="java" value="4784" />
           <entry key="json" value="16" />
-          <entry key="properties" value="209" />
+          <entry key="properties" value="226" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4709" />
+          <entry key="JAVA" value="4784" />
           <entry key="JSON" value="16" />
-          <entry key="Properties" value="209" />
+          <entry key="Properties" value="226" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="595" column="29" lean-forward="true" selection-start-line="595" selection-start-column="29" selection-end-line="595" selection-end-column="29" />
+            <state relative-caret-position="456">
+              <caret line="437" selection-start-line="437" selection-end-line="437" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="431" column="44" lean-forward="true" selection-start-line="431" selection-start-column="44" selection-end-line="431" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="30" column="136" selection-start-line="30" selection-start-column="136" selection-end-line="30" selection-end-column="136" />
             </state>
           </provider>
         </entry>
@@ -97,12 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tuple</find>
-      <find>getuserlogin</find>
-      <find>update-user-player</find>
-      <find>get-user-profile</find>
-      <find>GET_USER</find>
-      <find>getUserLogin</find>
       <find>getProf</find>
       <find>limitrow</find>
       <find>Integer</find>
@@ -111,7 +142,6 @@
       <find>?</find>
       <find>getAttach</find>
       <find>getatt</find>
-      <find>getmail</find>
       <find>getat</find>
       <find>get-attachment</find>
       <find>urlpathtem</find>
@@ -127,6 +157,13 @@
       <find>postdi</find>
       <find>disposisiTo</find>
       <find>post</find>
+      <find>getProfile</find>
+      <find>getreport</find>
+      <find>get-report-by-mail</find>
+      <find>getma</find>
+      <find>mato_startdate</find>
+      <find>getmail</find>
+      <find>getreportbymail</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,9 +207,9 @@
         <option value="$PROJECT_DIR$/src/config/config.json" />
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db-eoffice-old.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties" />
         <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java" />
       </list>
     </option>
   </component>
@@ -199,7 +236,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1" />
     <option name="y" value="1" />
     <option name="width" value="1364" />
@@ -212,28 +249,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
-              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
-              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
-              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
-              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
-              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
-              <item name="office" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -315,6 +330,28 @@
               <item name="eoffice-rest-api" type="cbb8eebc:String" user="eoffice-rest-api" />
               <item name="src" type="cbb8eebc:String" user="src" />
               <item name="main" type="cbb8eebc:String" user="main" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
+              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
+              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
+              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="eoffice-rest-api" type="58d84e3e:PackageViewProjectNode" />
+              <item name="exa-pim-api" type="616d4139:PackageViewModuleNode" />
+              <item name="exa.vertx" type="1f31426a:PackageElementNode" />
+              <item name="office" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -526,10 +563,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="563" y="160" width="240" height="407" id="Project" order="0" weight="0.12934947" />
+      <window_info content_ui="combo" x="563" y="160" width="240" height="407" id="Project" order="0" visible="true" weight="0.12934947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -544,7 +581,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49924356" weight="0.3704918" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49924356" visible="true" weight="0.3737705" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.3295082" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -655,16 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/OfficeDatabaseVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9027">
@@ -679,17 +706,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/MainVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="91" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-973">
-          <caret line="677" column="56" selection-start-line="677" selection-start-column="56" selection-end-line="677" selection-end-column="56" />
+        <state relative-caret-position="255">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -698,8 +718,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/EofficeDBVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="595" column="29" lean-forward="true" selection-start-line="595" selection-start-column="29" selection-end-line="595" selection-end-column="29" />
+        <state relative-caret-position="456">
+          <caret line="437" selection-start-line="437" selection-end-line="437" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db-eoffice-mobile.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="30" column="136" selection-start-line="30" selection-start-column="136" selection-end-line="30" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exa/vertx/office/HttpServerVerticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="431" column="44" lean-forward="true" selection-start-line="431" selection-start-column="44" selection-end-line="431" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
