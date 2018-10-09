@@ -551,26 +551,40 @@ public class EofficeDBVerticle extends AbstractVerticle {
        // LOGGER.info("mato: "+matoId+"/"+mailId+"/"+msg+"/"+pegaNip);
        // LOGGER.info("local time: "+localTime.toString());
 
-        List<Tuple> batch = new ArrayList();
+        //List<Tuple> batch = new ArrayList();
 
 
         staffList.forEach(result ->{
             JsonObject val = new JsonObject(result.toString());
             String nipStaff = val.getString("nip");
         //     LOGGER.info("nip : "+val.getString("nip")+"/"+val.getString("name")+"/"+val.getInteger("id"));
-            batch.add(Tuple.of(mailId,matoId,nipStaff,"DISPOSISI","NEW",localTime.atStartOfDay(),pegaNip,"Segara Kerjakan. Terimakasih"));
+            //batch.add(Tuple.of(mailId,matoId,nipStaff,"DISPOSISI","NEW",localTime.atStartOfDay(),pegaNip,"Segara Kerjakan. Terimakasih"));
+
+            Tuple params = Tuple.of(mailId,matoId,nipStaff,"DISPOSISI","NEW",localTime.atStartOfDay(),pegaNip,"Segara Kerjakan. Terimakasih");
+
+            dbPool.preparedQuery(sqlQueries.get(SqlQuery.POST_DISPOSISI),params,res ->{
+                if (res.succeeded()){
+                    PgRowSet rows = res.result();
+
+                    message.reply(new JsonObject().put("succeed",true).put("message","Disposisi sukses terkirim..."));
+                }else{
+                    LOGGER.info("rows failed : "+res.cause());
+                    message.reply(new JsonObject().put("succeed",false).put("message","Beberap staff terpilih sudah terdaftar."));
+                }
+            });
+
         });
 
 
 
-        dbPool.preparedBatch(sqlQueries.get(SqlQuery.POST_DISPOSISI),batch,res ->{
+      /*  dbPool.preparedBatch(sqlQueries.get(SqlQuery.POST_DISPOSISI),batch,res ->{
             if (res.succeeded()){
                 PgRowSet rows = res.result();
                 message.reply(new JsonObject().put("succeed",true).put("message","Disposisi sukses terkirim..."));
             }else{
                 message.reply(new JsonObject().put("succeed",false).put("message",res.cause()));
             }
-        });
+        });*/
 
 
 
