@@ -26,5 +26,6 @@
     "push.id":"f95f68a6-ed64-4b75-8d9d-79716a73d5ac",
     "push.key":"MThiOTYzOTEtMjg0YS00NjhiLWJiMTMtYjlmOGJhNmJkMjJi"
   },
-  "epimdb.queue":"eoffice.bus"
+  "epimdb.queue":"eoffice.bus",
+  "epimUpload.queue": "upload.bus"
 }

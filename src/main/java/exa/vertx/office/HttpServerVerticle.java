@@ -33,6 +33,7 @@ public class HttpServerVerticle extends AbstractVerticle {
 
     public static final String CONFIG_HTTP_SERVER_PORT = "http.server.port";
     public static final String CONFIG_APIDB_QUEUE = "epimdb.queue";
+    public static final String CONFIG_UPLOAD_QUEUE = "epimUpload.queue";
     public static final String PUBLIC_IMAGES = "public.images";
     public static final String PROFILE_IMAGES = "public.profile";
     public static final String FILE_LOCATION="file.location";
@@ -45,6 +46,7 @@ public class HttpServerVerticle extends AbstractVerticle {
 
 
     private String epimDbQueue = "epimdb.queue";
+    private String epimUploadQueue = "epimUpload.queue";
     private String urlPath;
     private String urlPathDoc;
     private String urlPathTemplate;
@@ -56,6 +58,8 @@ public class HttpServerVerticle extends AbstractVerticle {
     public void start(Future<Void> startFuture) throws Exception {
 
         epimDbQueue = config().getString(CONFIG_APIDB_QUEUE, "epimdb.queue");
+
+        epimUploadQueue = config().getString(CONFIG_UPLOAD_QUEUE, "epimdb.queue");
 
         urlPath= config().getJsonObject("public").getString(PUBLIC_IMAGES,"assets.images");
 
@@ -573,11 +577,26 @@ public class HttpServerVerticle extends AbstractVerticle {
 
                 String result="succeed";
 
+
                 future.complete(result);
 
             }, res -> {
 
                 if (res.succeeded()) {
+
+                    DeliveryOptions options = new DeliveryOptions().addHeader("upload", "upload-photos");
+                    vertx.eventBus().send(epimUploadQueue,request, options, reply -> {
+                        if (reply.succeeded()) {
+                            JsonObject body = (JsonObject) reply.result().body();
+                            context.response().putHeader("Content-Type", "application/json");
+                            context.response().end(body.encode());
+
+                        } else {
+                            context.fail(reply.cause());
+                        }
+                    });
+
+
                     //  LOGGER.info("file created");
 
                     //    LOGGER.info("newRequest:"+request);
