@@ -5,6 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServer;
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.jwt.JWTAuth;
 import io.vertx.ext.auth.jwt.JWTOptions;
@@ -38,6 +39,7 @@ public class HttpServerVerticle extends AbstractVerticle {
     public static final String PUBLIC_ASSETS_DOKUMEN="assets.sharedoc";
     public static final String PUBLIC_ASSETS_LAPORAN="assets.laporan";
     public static final String PUBLIC_ASSETS_TEMPLATE="assets.template";
+    public static final String PUBLIC_UPLOAD_LAPORAN="assets.laporan";
     private static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private static final int DEFAULT_PORT = 8085;
 
@@ -65,7 +67,7 @@ public class HttpServerVerticle extends AbstractVerticle {
 
         String avatarPath = config().getString(PROFILE_IMAGES,"public.profiles");
 
-        fileStore= config().getString(FILE_LOCATION,"file.location");
+        fileStore= config().getJsonObject("upload").getString(PUBLIC_UPLOAD_LAPORAN, "assets.laporan");
 
         // Generate the certificate for https
        // SelfSignedCertificate cert = SelfSignedCertificate.create();
@@ -430,7 +432,7 @@ public class HttpServerVerticle extends AbstractVerticle {
                         .replaceAll("images/\"", "images/")
                         .replaceAll("laporan/\"", "laporan/")
                         .replaceAll("}]\"]\"","}]")
-                        .replaceAll("\"mare_note\":\"sudah selesai\"}]]","\"mare_note\":\"sudah selesaix\"}]"));
+                        .replaceAll("\"mare_note\":\"sudah selesai\"}]]","\"mare_note\":\"sudah selesai\"}]"));
 
 
             } else {
@@ -501,13 +503,107 @@ public class HttpServerVerticle extends AbstractVerticle {
         JsonObject request = context.getBodyAsJson();
         JsonObject jsonData = request.getJsonObject("data");
 
-       // LOGGER.info("jsondata: "+jsonData);
-        String imgBase64 = jsonData.getString("evidence");
+        LOGGER.info("json:"+jsonData);
+
         String unor = jsonData.getString("org");
-        String pegaNip = jsonData.getString("username");
+        String pegaNip = jsonData.getString("pegaNip");
+        JsonArray evidenceList = jsonData.getJsonArray("evidence");
+        LOGGER.info("evidence: "+evidenceList);
 
-        LOGGER.info("json: "+unor+"/"+pegaNip);
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int year  = localDate.getYear();
+        int month = localDate.getMonthValue();
+        int day   = localDate.getDayOfMonth();
 
+        // let's loop to send file to static folder
+        evidenceList.forEach(row -> {
+            JsonObject uri = new JsonObject(row.toString());
+            String imgBase64 = uri.getString("baseImg64");
+            //LOGGER.info("uri: "+uri);
+            //LOGGER.info("uri: "+uri.size());
+            LOGGER.info("imagebase64: "+imgBase64);
+
+            String random = randomAlphaNumeric(8);
+
+            LOGGER.info("random: "+random+fileStore);
+
+            String fileName = unor+pegaNip+year+month+day+"_"+random+".jpg";
+
+            //String filePath = fileStore+pegaNip+"/"+fileName;
+
+            String filePath = fileStore+"/"+fileName;
+
+
+            File file = new File(filePath);
+
+            // add filename attribute to json
+            request.put("filename", fileName);
+
+
+            // use blocking handler for handle blocking process
+            vertx.<String>executeBlocking(future -> {
+
+               /* File fileDirectory = new File(fileStore+pegaNip);
+
+                if (!fileDirectory.exists()){
+                    fileDirectory.mkdir();
+                    LOGGER.info("directory created");
+                }*/
+
+                // decode base64 encoded image
+
+                try (FileOutputStream imageOutFile = new FileOutputStream(file)) {
+                    if (!file.exists()){
+                        file.createNewFile();
+                    }
+                    // Converting a Base64 String into Image byte array
+                    //byte[] imageByteArray = Base64.getDecoder().decode(imgBase64);
+                    byte[] imageByteArray = Base64.getMimeDecoder().decode(imgBase64);
+
+
+                //    LOGGER.info("hasil : "+imageByteArray.toString());
+
+                    imageOutFile.write(imageByteArray);
+                } catch (FileNotFoundException e) {
+                    LOGGER.info("Image not found "+e);
+                } catch (IOException ioe) {
+                    LOGGER.info("Exception while reading the Image " + ioe);
+                }
+
+                String result="succeed";
+
+                future.complete(result);
+
+            }, res -> {
+
+                if (res.succeeded()) {
+                    //  LOGGER.info("file created");
+
+                    //    LOGGER.info("newRequest:"+request);
+
+               /*     DeliveryOptions options = new DeliveryOptions().addHeader("action", "post-report");
+
+                    vertx.eventBus().send(epimDbQueue,request, options, reply -> {
+                        if (reply.succeeded()) {
+                            JsonObject body = (JsonObject) reply.result().body();
+                            context.response().putHeader("Content-Type", "application/json");
+                            context.response().end(body.encode());
+
+                        } else {
+                            context.fail(reply.cause());
+                        }
+                    });*/
+
+                } else {
+                    res.failed();
+                    //context.fail(reply.cause());
+                }
+            });
+
+        });
+
+/*
         Date date = new Date();
         LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         int year  = localDate.getYear();
@@ -589,7 +685,7 @@ public class HttpServerVerticle extends AbstractVerticle {
                 //context.fail(reply.cause());
             }
         });
-
+        */
 
     }
 

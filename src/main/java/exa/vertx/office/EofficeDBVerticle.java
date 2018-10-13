@@ -14,10 +14,10 @@ import org.slf4j.LoggerFactory;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Instant;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Properties;
 
 public class EofficeDBVerticle extends AbstractVerticle {
@@ -213,10 +213,10 @@ public class EofficeDBVerticle extends AbstractVerticle {
             case "post-disposisi":
                 postDisposisi(message);
                 break;
-            /*case "post-report":
+            case "post-report":
                 postReport(message);
                 break;
-            case "post-delete-staff":
+           /* case "post-delete-staff":
                 disposeStaff(message);
                 break;
             case "post-dispos-notif":
@@ -231,6 +231,54 @@ public class EofficeDBVerticle extends AbstractVerticle {
             default:
                 message.fail(EofficeDBVerticle.ErrorCodes.BAD_ACTION.ordinal(), "Bad action: " + action);
         }
+    }
+
+    private void postReport(Message<JsonObject> message) {
+        JsonObject resJsonData = message.body().getJsonObject("data");
+        LOGGER.info("postReport : "+resJsonData);
+
+        Integer mailId = resJsonData.getInteger("mailId");
+        Integer manoId = resJsonData.getInteger("manoId");
+        Integer userId = resJsonData.getInteger("pegaStaff");
+        String fileName = message.body().getString("filename");
+        String status = resJsonData.getString("status");
+        String note =resJsonData.getString("message");
+
+        LOGGER.info("postReport : "+status+"/"+manoId+"/"+mailId+"/"+"/"+fileName+"/"+userId+"/"+note);
+
+        LocalDate localTime = LocalDate.now();
+        Instant instant = Instant.now();
+
+        JsonArray evidenceList = message.body().getJsonArray("evidence");
+
+
+        Tuple paramsUpdate = Tuple.of(status,note,instant,manoId);
+
+        dbPool.preparedQuery(sqlQueries.get(SqlQuery.POST_UPDATE_MANO),paramsUpdate, resUpdate ->{
+            if (resUpdate.succeeded()){
+                message.reply(new JsonObject().put("succeed","true").put("message","done"));
+                evidenceList.forEach(result ->{
+                    JsonObject val = new JsonObject(result.toString());
+                    Tuple params = Tuple.of(fileName,fileName,localTime,note,manoId,mailId,userId);
+                    dbPool.preparedQuery(sqlQueries.get(SqlQuery.POST_INSERT_REPORT),params,res ->{
+                        if (res.succeeded()){
+                            //message.reply(new JsonObject().put("succeed","true"));
+                            PgRowSet rows = res.result();
+                        }  else {
+                            reportQueryError(message, res.cause());
+                        }
+                    });
+
+                });
+            }else{
+                message.reply(new JsonObject().put("succeed","false").put("message","failed"));
+                reportQueryError(message, resUpdate.cause());
+            }
+        });
+
+
+
+
     }
 
 
@@ -424,14 +472,16 @@ public class EofficeDBVerticle extends AbstractVerticle {
 
                 Json data = null;
                 for (Row row : rows) {
-                    data = row.getJson("data");
+                        data = row.getJson("data");
                 }
 
                 arr.add(data.value().toString());
                 message.reply(new JsonObject().put("data",arr.toString()));
 
+
             } else {
                 reportQueryError(message, res.cause());
+
             }
         });
 
@@ -555,9 +605,12 @@ public class EofficeDBVerticle extends AbstractVerticle {
         Integer mailId= message.body().getInteger("mailId");
         String msg = message.body().getString("message");
         String pegaNip= message.body().getString("pegaNip");
+        String pegaUnor= message.body().getString("pegaUnor");
         LocalDate localTime = LocalDate.now();
 
-       // LOGGER.info("mato: "+matoId+"/"+mailId+"/"+msg+"/"+pegaNip);
+
+
+        LOGGER.info("mato: "+matoId+"/"+mailId+"/"+msg+"/"+pegaNip+"/"+pegaUnor);
        // LOGGER.info("local time: "+localTime.toString());
 
         //List<Tuple> batch = new ArrayList();
@@ -569,7 +622,7 @@ public class EofficeDBVerticle extends AbstractVerticle {
         //     LOGGER.info("nip : "+val.getString("nip")+"/"+val.getString("name")+"/"+val.getInteger("id"));
             //batch.add(Tuple.of(mailId,matoId,nipStaff,"DISPOSISI","NEW",localTime.atStartOfDay(),pegaNip,"Segara Kerjakan. Terimakasih"));
 
-            Tuple params = Tuple.of(mailId,matoId,nipStaff,"DISPOSISI","NEW",localTime.atStartOfDay(),pegaNip,"Segara Kerjakan. Terimakasih");
+            Tuple params = Tuple.of(mailId,matoId,nipStaff,"DISPOSISI","NEW",localTime.atStartOfDay(),pegaNip,"Segara Kerjakan. Terimakasih",pegaUnor);
 
             dbPool.preparedQuery(sqlQueries.get(SqlQuery.POST_DISPOSISI),params,res ->{
                 if (res.succeeded()){
@@ -583,19 +636,6 @@ public class EofficeDBVerticle extends AbstractVerticle {
             });
 
         });
-
-
-
-      /*  dbPool.preparedBatch(sqlQueries.get(SqlQuery.POST_DISPOSISI),batch,res ->{
-            if (res.succeeded()){
-                PgRowSet rows = res.result();
-                message.reply(new JsonObject().put("succeed",true).put("message","Disposisi sukses terkirim..."));
-            }else{
-                message.reply(new JsonObject().put("succeed",false).put("message",res.cause()));
-            }
-        });*/
-
-
 
 
     }

@@ -8,11 +8,11 @@
     "assets.laporan": "http://10.0.3.2:8085/eoffice/assets/laporan/",
     "assets.template": "http://10.0.3.2:8085/eoffice/assets/template/"
   },
-  "upload.files":{
-    "images": "/assets/images/",
-    "sharedoc": "/assets/dokumen/",
-    "laporan": "/assets/laporan/",
-    "template": "/assets/template/"
+  "upload":{
+    "assets.images": "/assets/images/",
+    "assets.sharedoc": "/assets/dokumen/",
+    "assets.laporan": "./assets/laporan/",
+    "assets.template": "/assets/template/"
   },
   "database" : {
     "postgres.host": "localhost",
