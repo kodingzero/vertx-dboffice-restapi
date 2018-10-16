@@ -23,12 +23,11 @@ public class MainVerticle extends AbstractVerticle {
     public void start(Future<Void> startFuture) throws Exception {
 
         final JsonObject config = Config.fromFile("src/config/config.json");
-        DeploymentOptions options = new DeploymentOptions().setConfig(config);
 
         CompositeFuture
                 .all(deployHelper(HttpServerVerticle.class.getName(), new DeploymentOptions().setInstances(1).setConfig(config)),
-                        deployHelper(EofficeDBVerticle.class.getName(),options),
-                        deployHelper(FileSystemVerticle.class.getName(),options))
+                        deployHelper(EofficeDBVerticle.class.getName(),new DeploymentOptions().setConfig(config)),
+                        deployHelper(FileSystemVerticle.class.getName(),new DeploymentOptions().setConfig(config)))
                 .setHandler(result -> {
             if(result.succeeded()){
                 startFuture.complete();

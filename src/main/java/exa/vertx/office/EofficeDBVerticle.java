@@ -11,14 +11,11 @@ import io.vertx.core.json.JsonObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.time.Instant;
 import java.time.LocalDate;
-import java.util.HashMap;
-
-import java.util.Properties;
+import java.time.ZoneId;
+import java.util.*;
 
 public class EofficeDBVerticle extends AbstractVerticle {
     public static final String CONFIG_API_JDBC_HOST="postgres.host";
@@ -28,6 +25,10 @@ public class EofficeDBVerticle extends AbstractVerticle {
     public static final String CONFIG_API_JDBC_PASSWORD = "postgres.password";
     public static final String CONFIG_API_JDBC_MAX_POOL_SIZE = "postgres.max_pool_size";
     public static final String CONFIG_API_SQL_QUERIES_RESOURCE_FILE = "api.sqlqueries.resource.file";
+    public static final String PUBLIC_UPLOAD_LAPORAN="assets.laporan";
+    public static final String CONFIG_UPLOAD_QUEUE = "epimUpload.queue";
+    private static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private String fileStore;
 
 
     private static String  ONESIGNAL_APP_ID="push.id";
@@ -56,14 +57,12 @@ public class EofficeDBVerticle extends AbstractVerticle {
         POST_DELETE_STAFF,
         POST_MAIL_MREQPLAY,
         POST_MAIL_ATTACH,
+        GET_CHART_TYPE,
+        GET_CHART_STATUS,
         /* OLD QUERY BELOW*/
-        GET_INBOX,
-        GET_DASHBOARD,
-        POST_NOTIFIKASI,
         POST_DISPOSISI,
         POST_UPDATE_MANO,
         POST_INSERT_REPORT,
-        POST_MAIL_EVIDENCE,
         UPDATE_INBOX,
         UPDATE_STATUS_INBOX,
 
@@ -75,6 +74,7 @@ public class EofficeDBVerticle extends AbstractVerticle {
     private void loadSqlQueries() throws IOException {
 
 
+        fileStore= config().getJsonObject("upload").getString(PUBLIC_UPLOAD_LAPORAN, "assets.laporan");
 
         String queriesFile = config().getString(CONFIG_API_SQL_QUERIES_RESOURCE_FILE);
         InputStream queriesInputStream;
@@ -103,6 +103,8 @@ public class EofficeDBVerticle extends AbstractVerticle {
         sqlQueries.put(EofficeDBVerticle.SqlQuery.GET_REPORT_BY_MAIL, queriesProps.getProperty("get-report-by-mail"));
         sqlQueries.put(EofficeDBVerticle.SqlQuery.GET_REPORT_BY_NIP, queriesProps.getProperty("get-report-by-nip"));
         sqlQueries.put(EofficeDBVerticle.SqlQuery.GET_SHARE_DOC, queriesProps.getProperty("get-share-doc"));
+        sqlQueries.put(EofficeDBVerticle.SqlQuery.GET_CHART_TYPE, queriesProps.getProperty("dashboard-total-type"));
+        sqlQueries.put(EofficeDBVerticle.SqlQuery.GET_CHART_STATUS, queriesProps.getProperty("dashboard-total-status"));
 
         sqlQueries.put(EofficeDBVerticle.SqlQuery.GET_DRAFT_CHAT, queriesProps.getProperty("get-draft-chat"));
         sqlQueries.put(EofficeDBVerticle.SqlQuery.POST_DELETE_STAFF, queriesProps.getProperty("post-delete-staff"));
@@ -207,14 +209,20 @@ public class EofficeDBVerticle extends AbstractVerticle {
             case "get-draft-chat":
                 getDraftChat(message);
                 break;
-            case "get-share-doc":
-                getShareDoc(message);
+            case "dashboard-total-type":
+                getChartTotalType(message);
+                break;
+            case "dashboard-total-status":
+                getChartTotalStatus(message);
                 break;
             case "post-disposisi":
                 postDisposisi(message);
                 break;
             case "post-report":
                 postReport(message);
+                break;
+            case "upload-photos":
+                uploadPhotos(message);
                 break;
            /* case "post-delete-staff":
                 disposeStaff(message);
@@ -231,6 +239,229 @@ public class EofficeDBVerticle extends AbstractVerticle {
             default:
                 message.fail(EofficeDBVerticle.ErrorCodes.BAD_ACTION.ordinal(), "Bad action: " + action);
         }
+    }
+
+    private void getChartTotalStatus(Message<JsonObject> message) {
+        String type = message.body().getString("type");
+        String unor = message.body().getString("unor");
+        Tuple params = Tuple.of(unor,type);
+
+
+        dbPool.preparedQuery(sqlQueries.get(SqlQuery.GET_CHART_STATUS),params, res -> {
+            if (res.succeeded()) {
+                PgRowSet rows = res.result();
+                JsonArray arr = new JsonArray();
+
+                Json data = null;
+                for (Row row : rows) {
+                    data = row.getJson("data");
+                }
+
+                arr.add(data.value().toString());
+                message.reply(new JsonObject().put("data",arr.toString()));
+
+            } else {
+                reportQueryError(message, res.cause());
+            }
+        });
+    }
+
+    private void getChartTotalType(Message<JsonObject> message) {
+        String unor = message.body().getString("unor");
+        Tuple params = Tuple.of(unor);
+
+
+        dbPool.preparedQuery(sqlQueries.get(SqlQuery.GET_CHART_TYPE),params, res -> {
+            if (res.succeeded()) {
+                PgRowSet rows = res.result();
+                JsonArray arr = new JsonArray();
+
+                Json data = null;
+                for (Row row : rows) {
+                    data = row.getJson("data");
+                }
+
+                arr.add(data.value().toString());
+                message.reply(new JsonObject().put("data",arr.toString()));
+
+            } else {
+                reportQueryError(message, res.cause());
+            }
+        });
+
+    }
+
+    private void uploadPhotos(Message<JsonObject> message) {
+        LOGGER.info("Upload Photos to create files on efofice db verticle");
+        JsonObject jsonData = message.body().getJsonObject("data");
+
+        // LOGGER.info("json: "+jsonData);
+
+        String unor = jsonData.getString("org");
+        String pegaNip = jsonData.getString("pegaNip");
+        Integer mailId = jsonData.getInteger("mailId");
+        Integer matoId = jsonData.getInteger("matoId");
+        Integer manoId = jsonData.getInteger("manoId");
+        String userId = jsonData.getString("pegaStaff");
+        String status = jsonData.getString("status");
+        String note = jsonData.getString("message");
+
+
+
+
+        boolean isCamera = jsonData.getBoolean("isCamera");
+
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int year  = localDate.getYear();
+        int month = localDate.getMonthValue();
+        int day   = localDate.getDayOfMonth();
+        LOGGER.info("isCamera: "+isCamera);
+        LocalDate localTime = LocalDate.now();
+        Instant instant = Instant.now();
+
+        LOGGER.info("local time for mano_enddate : "+localTime.toString());
+        LOGGER.info("instant for mano_enddate : "+instant);
+        //LOGGER.info("mailId:"+mailId+"/"+matoId+"/"+manoId);
+
+        Tuple paramsUpdate = Tuple.of(status,note,instant,manoId);
+
+        dbPool.preparedQuery(sqlQueries.get(SqlQuery.POST_UPDATE_MANO),paramsUpdate, resUpdate ->{
+            if (resUpdate.succeeded()){
+              //  LOGGER.info("succeed");
+                if (isCamera){
+
+                    String imageCameraImg64 = jsonData.getJsonObject("evidence").getString("baseImg64");
+                    String random = randomAlphaNumeric(8);
+                    String fileName = unor+pegaNip+year+month+day+"_"+random+".jpg";
+                    String filePath = fileStore+"/"+fileName;
+                    File file = new File(filePath);
+
+                    // use blocking handler for handle blocking process
+                    vertx.<String>executeBlocking(future -> {
+                        // decode base64 encoded image
+
+                        try (FileOutputStream imageOutFile = new FileOutputStream(file)) {
+                            if (!file.exists()){
+                                file.createNewFile();
+                            }
+                            // Converting a Base64 String into Image byte array
+                            //byte[] imageByteArray = Base64.getDecoder().decode(imgBase64);
+                            byte[] imageByteArray = Base64.getMimeDecoder().decode(imageCameraImg64);
+                            imageOutFile.write(imageByteArray);
+
+                        } catch (FileNotFoundException e) {
+                            LOGGER.info("Image not found "+e);
+                        } catch (IOException ioe) {
+                            LOGGER.info("Exception while reading the Image " + ioe);
+                        }
+
+                        String result="succeed";
+
+
+                        future.complete(result);
+
+                    }, res -> {
+
+                        if (res.succeeded()) {
+
+                            LOGGER.info("Upload photo camera");
+                            Tuple params = Tuple.of(fileName,fileName,localTime,note,manoId,mailId,userId);
+                            dbPool.preparedQuery(sqlQueries.get(SqlQuery.POST_INSERT_REPORT),params,resInsert ->{
+                                if (resInsert.succeeded()){
+                                    //message.reply(new JsonObject().put("succeed","true"));
+                                    PgRowSet rows = resInsert.result();
+                                }  else {
+                                    reportQueryError(message, res.cause());
+                                }
+
+                            });
+
+                        } else {
+                            res.failed();
+                        }
+                    });
+
+                }else{
+                    LOGGER.info("Upload photo gallery");
+                    JsonArray evidenceList= null;
+                    evidenceList = jsonData.getJsonArray("evidence");
+
+
+                    // let's loop to send file to static folder
+                    evidenceList.forEach(row -> {
+                        JsonObject uri = new JsonObject(row.toString());
+                        String imgBase64 = uri.getString("baseImg64");
+                        // LOGGER.info("imagebase64: "+imgBase64);
+
+                        String random = randomAlphaNumeric(8);
+
+                        String fileName = unor+pegaNip+year+month+day+"_"+random+".jpg";
+                        String filePath = fileStore+"/"+fileName;
+                        File file = new File(filePath);
+
+
+                        Tuple params = Tuple.of(fileName,fileName,localTime,note,manoId,mailId,userId);
+                        dbPool.preparedQuery(sqlQueries.get(SqlQuery.POST_INSERT_REPORT),params,res ->{
+                            if (res.succeeded()){
+                                message.reply(new JsonObject().put("succeed","true").put("message","file has been upoad to server"));
+                                PgRowSet rows = res.result();
+                            }  else {
+                                reportQueryError(message, res.cause());
+                            }
+                        });
+
+
+                        // use blocking handler for handle blocking process
+                        vertx.<String>executeBlocking(future -> {
+
+                            try (FileOutputStream imageOutFile = new FileOutputStream(file)) {
+                                if (!file.exists()){
+                                    file.createNewFile();
+                                }
+                                // Converting a Base64 String into Image byte array
+                                //byte[] imageByteArray = Base64.getDecoder().decode(imgBase64);
+                                byte[] imageByteArray = Base64.getMimeDecoder().decode(imgBase64);
+                                imageOutFile.write(imageByteArray);
+
+                            } catch (FileNotFoundException e) {
+                                LOGGER.info("Image not found "+e);
+                            } catch (IOException ioe) {
+                                LOGGER.info("Exception while reading the Image " + ioe);
+                            }
+
+                            String result="succeed";
+
+
+                            future.complete(result);
+
+                        }, res -> {
+
+                            if (res.succeeded()) {
+                                message.reply(new JsonObject().put("succeed","true").put("message","file has been upoad to server"));
+
+                                LOGGER.info("Upload photo successfull");
+
+
+                            } else {
+                                res.failed();
+                                //context.fail(reply.cause());
+                            }
+                        });
+
+                    });
+                }
+
+            }else{
+
+                reportQueryError(message, resUpdate.cause());
+            }
+        });
+
+
+
+
+        message.reply(new JsonObject().put("succeed","true").put("message","file has been upoad to server"));
     }
 
     private void postReport(Message<JsonObject> message) {
@@ -275,9 +506,6 @@ public class EofficeDBVerticle extends AbstractVerticle {
                 reportQueryError(message, resUpdate.cause());
             }
         });
-
-
-
 
     }
 
@@ -460,9 +688,10 @@ public class EofficeDBVerticle extends AbstractVerticle {
 
     private void getReportByMail(Message<JsonObject> message) {
         Integer mailId = message.body().getInteger("mailId");
-        LOGGER.info("getReportByMail db: "+mailId);
+        Integer matoId = message.body().getInteger("matoId");
+        LOGGER.info("getReportByMail db: mailId"+mailId+"/ matoId"+matoId);
 
-        Tuple params = Tuple.of(mailId);
+        Tuple params = Tuple.of(mailId,matoId);
         LOGGER.info(sqlQueries.get(SqlQuery.GET_REPORT_BY_MAIL));
 
         dbPool.preparedQuery(sqlQueries.get(SqlQuery.GET_REPORT_BY_MAIL),params, res -> {
@@ -654,5 +883,14 @@ public class EofficeDBVerticle extends AbstractVerticle {
     private void reportQueryError(Message<JsonObject> message, Throwable cause) {
         LOGGER.error("Database query error", cause);
         message.fail(EofficeDBVerticle.ErrorCodes.DB_ERROR.ordinal(), cause.getMessage());
+    }
+
+    private String randomAlphaNumeric(int count) {
+        StringBuilder builder = new StringBuilder();
+        while (count-- != 0) {
+            int character = (int)(Math.random()*ALPHA_NUMERIC_STRING.length());
+            builder.append(ALPHA_NUMERIC_STRING.charAt(character));
+        }
+        return builder.toString();
     }
 }

@@ -9,10 +9,10 @@
     "assets.template": "http://10.0.3.2:8085/eoffice/assets/template/"
   },
   "upload":{
-    "assets.images": "/assets/images/",
-    "assets.sharedoc": "/assets/dokumen/",
+    "assets.images": "./assets/images/",
+    "assets.sharedoc": "./assets/dokumen/",
     "assets.laporan": "./assets/laporan/",
-    "assets.template": "/assets/template/"
+    "assets.template": "./assets/template/"
   },
   "database" : {
     "postgres.host": "localhost",
