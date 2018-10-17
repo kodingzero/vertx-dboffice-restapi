@@ -149,6 +149,8 @@ public class HttpServerVerticle extends AbstractVerticle {
         apiRouter.get("/getChartTotalType/:unor").handler(this::getChartTotalType);
         apiRouter.get("/getChartTotalStatus/:unor/:type").handler(this::getChartTotalStatus);
 
+
+        apiRouter.get("/getStatusMail/:matoId/:mailId").handler(this::getStatusMail);
         apiRouter.post("/push").handler(this::pushNotification);
         // Enable multipart form data parsing
         apiRouter.post("/upload").handler(BodyHandler.create()
@@ -187,6 +189,36 @@ public class HttpServerVerticle extends AbstractVerticle {
                         startFuture.fail(ar.cause());
                     }
                 });
+    }
+
+    private void getStatusMail(RoutingContext context) {
+        LOGGER.info("setStatusMail");
+
+        Integer matoId = Integer.parseInt(context.request().getParam("matoId"));
+        Integer mailId = Integer.parseInt(context.request().getParam("mailId"));
+        // String password = context.request().getParam("password");
+
+
+        JsonObject request = new JsonObject().put("mailId", mailId).put("matoId",matoId);
+
+
+
+        DeliveryOptions options = new DeliveryOptions().addHeader("action", "get-status-mail");
+
+        vertx.eventBus().send(epimDbQueue, request, options, reply -> {
+            if (reply.succeeded()) {
+                JsonObject body = (JsonObject) reply.result().body();
+
+
+                context.response().putHeader("Content-Type", "application/json");
+                //  context.response().end(body.toString());
+                context.response().end(body.encodePrettily());
+
+
+            } else {
+                context.fail(reply.cause());
+            }
+        });
     }
 
     private void getChartTotalStatus(RoutingContext context) {

@@ -12,9 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.time.*;
 import java.util.*;
 
 public class EofficeDBVerticle extends AbstractVerticle {
@@ -59,6 +57,11 @@ public class EofficeDBVerticle extends AbstractVerticle {
         POST_MAIL_ATTACH,
         GET_CHART_TYPE,
         GET_CHART_STATUS,
+        PUT_STATUS_MAIL,
+        GET_STATUS_MATO,
+        UPDATE_STATUS_MAIL,
+        UPDATE_STATUS_MATO,
+        GET_STATUS_MANO,
         /* OLD QUERY BELOW*/
         POST_DISPOSISI,
         POST_UPDATE_MANO,
@@ -114,6 +117,12 @@ public class EofficeDBVerticle extends AbstractVerticle {
         sqlQueries.put(EofficeDBVerticle.SqlQuery.POST_INSERT_REPORT, queriesProps.getProperty("post-mail-report"));
         sqlQueries.put(EofficeDBVerticle.SqlQuery.POST_MAIL_MREQPLAY, queriesProps.getProperty("post-mail-reqplay"));
         sqlQueries.put(EofficeDBVerticle.SqlQuery.POST_MAIL_ATTACH, queriesProps.getProperty("post-mail-attach"));
+
+        sqlQueries.put(EofficeDBVerticle.SqlQuery.UPDATE_STATUS_MATO, queriesProps.getProperty("update-status-mato"));
+        sqlQueries.put(EofficeDBVerticle.SqlQuery.UPDATE_STATUS_MAIL, queriesProps.getProperty("update-status-mail"));
+        sqlQueries.put(EofficeDBVerticle.SqlQuery.GET_STATUS_MANO, queriesProps.getProperty("get-status-mano"));
+        sqlQueries.put(EofficeDBVerticle.SqlQuery.GET_STATUS_MATO, queriesProps.getProperty("get-status-mato"));
+
 
 
 
@@ -224,10 +233,10 @@ public class EofficeDBVerticle extends AbstractVerticle {
             case "upload-photos":
                 uploadPhotos(message);
                 break;
-           /* case "post-delete-staff":
-                disposeStaff(message);
+            case "get-status-mail":
+                getStatusMail(message);
                 break;
-            case "post-dispos-notif":
+           /* case "post-dispos-notif":
                 postDisposisi(message);
                 break;
             case "post-notif":
@@ -239,6 +248,96 @@ public class EofficeDBVerticle extends AbstractVerticle {
             default:
                 message.fail(EofficeDBVerticle.ErrorCodes.BAD_ACTION.ordinal(), "Bad action: " + action);
         }
+    }
+
+    private void getStatusMail(Message<JsonObject> message) {
+        Integer mailId = message.body().getInteger("mailId");
+        Integer matoId = message.body().getInteger("matoId");
+
+        Date date = new Date();
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());
+
+
+        Tuple paramsMano = Tuple.of(mailId,matoId);
+        Tuple updateMato = Tuple.of(matoId,localDateTime);
+        Tuple paramsMato = Tuple.of(matoId);
+        Tuple paramsMail = Tuple.of(mailId);
+
+
+        dbPool.getConnection(ar1 ->{
+            if (ar1.succeeded()){
+                PgConnection dbConn = ar1.result();
+
+                dbConn.preparedQuery(sqlQueries.get(SqlQuery.GET_STATUS_MANO),paramsMano,res -> {
+                    if (res.succeeded()) {
+                        PgRowSet rows = res.result();
+                        Integer rowMano=0;
+
+                        for (Row row : rows) {
+                            rowMano = row.getInteger("data");
+                        }
+                        LOGGER.info("rowMano: "+rowMano);
+                        if (rowMano == 0){
+
+                            LOGGER.info(sqlQueries.get(SqlQuery.UPDATE_STATUS_MATO)+"/"+updateMato);
+
+                            dbConn.preparedQuery(sqlQueries.get(SqlQuery.UPDATE_STATUS_MATO),updateMato,resUpdate ->{
+                                if (resUpdate.succeeded()){
+                                  //  LOGGER.info("Mail Tujuan has been closed.");
+                                  //  message.reply(new JsonObject().put("succeed",false).put("message", "status tujuan telah di closed."));
+
+                                    dbPool.preparedQuery(sqlQueries.get(SqlQuery.GET_STATUS_MATO),paramsMato, resMato -> {
+                                        if (resMato.succeeded()) {
+                                            PgRowSet rowsMato = resMato.result();
+                                            Integer rowMato=0;
+
+                                            for (Row row : rowsMato) {
+                                                rowMato = row.getInteger("data");
+                                            }
+
+                                            LOGGER.info("rowMato: "+rowMato);
+
+                                            if (rowMato==0){
+                                                dbPool.preparedQuery(sqlQueries.get(SqlQuery.UPDATE_STATUS_MAIL),paramsMail, resMail -> {
+                                                    if (resMail.succeeded()) {
+                                                        PgRowSet rowsMail = resMail.result();
+
+                                                        message.reply(new JsonObject().put("succeed",false).put("message", "surat telah automatis di closed."));
+                                                    } else {
+                                                        reportQueryError(message, res.cause());
+                                                    }
+                                                });
+
+                                            }else{
+                                                message.reply(new JsonObject().put("succeed",false).put("message", "status tujuan telah di closed."));
+                                            }
+
+                                        } else {
+                                            reportQueryError(message, res.cause());
+                                        }
+                                    });
+                                }else{
+                                    LOGGER.info("Mail Tujuan not yet closed");
+                                    message.reply(new JsonObject().put("succeed",false).put("message", resUpdate.cause()));
+                                    reportQueryError(message, resUpdate.cause());
+                                }
+                            });
+
+                            dbConn.close();
+
+                        } else{
+                            message.reply(new JsonObject().put("succeed",false).put("message", "Masih terdapat disposisi yang belum dikerjakan, silahkan cek ulang."));
+                            LOGGER.info("disposisi belum lengkap");
+                        }
+
+                    } else {
+                        message.reply(new JsonObject().put("succeed",false).put("message","network connection error."));
+                        reportQueryError(message, res.cause());
+
+                    }
+                });
+            }
+        });
     }
 
     private void getChartTotalStatus(Message<JsonObject> message) {
