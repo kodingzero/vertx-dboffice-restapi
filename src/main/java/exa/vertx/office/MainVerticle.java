@@ -21,8 +21,8 @@ public class MainVerticle extends AbstractVerticle {
 
     @Override
     public void start(Future<Void> startFuture) throws Exception {
-
-        final JsonObject config = Config.fromFile("src/config/config.json");
+        final JsonObject config = Config.fromFile("./config.json");
+        //final JsonObject config = Config.fromFile("src/config/config.json");
 
         CompositeFuture
                 .all(deployHelper(HttpServerVerticle.class.getName(), new DeploymentOptions().setInstances(1).setConfig(config)),
@@ -40,7 +40,7 @@ public class MainVerticle extends AbstractVerticle {
 
 
     private Future<Void> deployHelper(String name,DeploymentOptions options){
-        final JsonObject config = Config.fromFile("src/config/config.json");
+       // final JsonObject config = Config.fromFile("src/config/config.json");
         final Future<Void> future = Future.future();
         vertx.deployVerticle(name, options,res -> {
             if(res.failed()){

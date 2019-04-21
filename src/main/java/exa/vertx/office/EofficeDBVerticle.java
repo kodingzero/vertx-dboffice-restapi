@@ -8,6 +8,7 @@ import io.vertx.core.Future;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import org.mindrot.jbcrypt.BCrypt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -189,7 +190,7 @@ public class EofficeDBVerticle extends AbstractVerticle {
 
         switch (action) {
             case "get-user-login":
-                getUserLogin(message);
+                authenticateUser(message);
                 break;
             case "get-user-profile":
                 getUserProfile(message);
@@ -236,6 +237,9 @@ public class EofficeDBVerticle extends AbstractVerticle {
             case "get-status-mail":
                 getStatusMail(message);
                 break;
+            case "post-delete-staff":
+                deleteStaff(message);
+                break;
            /* case "post-dispos-notif":
                 postDisposisi(message);
                 break;
@@ -250,6 +254,26 @@ public class EofficeDBVerticle extends AbstractVerticle {
         }
     }
 
+    private void deleteStaff(Message<JsonObject> message) {
+        JsonObject resJsonData = message.body().getJsonObject("data");
+        LOGGER.info("deleteStaff : "+resJsonData);
+
+
+        Integer manoId = resJsonData.getInteger("manoId");
+        Tuple paramsMano = Tuple.of(manoId);
+
+        dbPool.preparedQuery(sqlQueries.get(SqlQuery.POST_DELETE_STAFF),paramsMano, res -> {
+            if (res.succeeded()) {
+                PgRowSet row = res.result();
+
+                message.reply(new JsonObject().put("succeed",false).put("message", "staff sudah di delete dari list disposisi"));
+            } else {
+                reportQueryError(message, res.cause());
+            }
+        });
+    }
+
+
     private void getStatusMail(Message<JsonObject> message) {
         Integer mailId = message.body().getInteger("mailId");
         Integer matoId = message.body().getInteger("matoId");
@@ -259,9 +283,9 @@ public class EofficeDBVerticle extends AbstractVerticle {
 
 
         Tuple paramsMano = Tuple.of(mailId,matoId);
-        Tuple updateMato = Tuple.of(matoId,localDateTime);
+        Tuple updateMato = Tuple.of(matoId,localDateTime,"CLOSED");
         Tuple paramsMato = Tuple.of(matoId);
-        Tuple paramsMail = Tuple.of(mailId);
+        Tuple updateMail = Tuple.of(mailId,"CLOSED");
 
 
         dbPool.getConnection(ar1 ->{
@@ -298,13 +322,13 @@ public class EofficeDBVerticle extends AbstractVerticle {
                                             LOGGER.info("rowMato: "+rowMato);
 
                                             if (rowMato==0){
-                                                dbPool.preparedQuery(sqlQueries.get(SqlQuery.UPDATE_STATUS_MAIL),paramsMail, resMail -> {
+                                                dbPool.preparedQuery(sqlQueries.get(SqlQuery.UPDATE_STATUS_MAIL),updateMail, resMail -> {
                                                     if (resMail.succeeded()) {
                                                         PgRowSet rowsMail = resMail.result();
 
                                                         message.reply(new JsonObject().put("succeed",false).put("message", "surat telah automatis di closed."));
                                                     } else {
-                                                        reportQueryError(message, res.cause());
+                                                        reportQueryError(message, resMail.cause());
                                                     }
                                                 });
 
@@ -313,7 +337,7 @@ public class EofficeDBVerticle extends AbstractVerticle {
                                             }
 
                                         } else {
-                                            reportQueryError(message, res.cause());
+                                            reportQueryError(message, resMato.cause());
                                         }
                                     });
                                 }else{
@@ -871,6 +895,43 @@ public class EofficeDBVerticle extends AbstractVerticle {
         });
     }
 
+    private void authenticateUser(Message<JsonObject> message) {
+
+        JsonObject credential = message.body().getJsonObject("session");
+
+        LOGGER.info("/authenticateUser new :" + credential);
+
+        String user = credential.getString("username");
+        String password = credential.getString("password");
+
+
+        Tuple params = Tuple.of(user);
+
+        LOGGER.info(sqlQueries.get(SqlQuery.GET_LOGIN)+"/"+params);
+
+        dbPool.preparedQuery(sqlQueries.get(SqlQuery.GET_LOGIN),params, res -> {
+            String candidate=null;
+
+            if (res.succeeded()){
+                PgRowSet rows = res.result();
+                for (Row row : rows) {
+                    candidate= row.getString("pega_password");
+                }
+
+                if (BCrypt.checkpw(password,candidate.replaceFirst("2y", "2a"))) {
+                    message.reply(new JsonObject().put("nip",user).put("succeed",true).put("message", "authenticated"));
+                }else{
+                    message.reply(new JsonObject().put("succeed",false).put("message", "user or password not authenticated. Please try again."));
+                }
+
+            }else{
+                message.reply(new JsonObject().put("succeed",false).put("message", res.cause()));
+            }
+
+        });
+
+    }
+
     private void getUserLogin(Message<JsonObject> message) {
         JsonObject credential = message.body().getJsonObject("session");
 
@@ -959,11 +1020,24 @@ public class EofficeDBVerticle extends AbstractVerticle {
                     message.reply(new JsonObject().put("succeed",true).put("message","Disposisi sukses terkirim..."));
                 }else{
                     LOGGER.info("rows failed : "+res.cause());
-                    message.reply(new JsonObject().put("succeed",false).put("message","Beberap staff terpilih sudah terdaftar."));
+                    message.reply(new JsonObject().put("succeed",false).put("message","Beberapa staff terpilih, sudah terdaftar."));
                 }
             });
 
         });
+
+        Tuple updateMail = Tuple.of(mailId,"INPROGRESS");
+        dbPool.preparedQuery(sqlQueries.get(SqlQuery.UPDATE_STATUS_MAIL),updateMail, resMail -> {
+            if (resMail.succeeded()) {
+                PgRowSet rowsMail = resMail.result();
+
+                message.reply(new JsonObject().put("succeed",false).put("message", "Surat telah berubah status"));
+            } else {
+                reportQueryError(message, resMail.cause());
+            }
+        });
+
+
 
 
     }
