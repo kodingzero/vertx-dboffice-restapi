@@ -145,8 +145,8 @@ public class EofficeDBVerticle extends AbstractVerticle {
 
         loadSqlQueries();
         //get token onesignal
-        oneSignalApiId = config().getJsonObject("OneSignal").getString(ONESIGNAL_APP_ID,"f95f68a6-ed64-4b75-8d9d-79716a73d5ac");
-        onesignalApiKey = config().getJsonObject("OneSignal").getString(ONESIGNAL_API_KEY,"MThiOTYzOTEtMjg0YS00NjhiLWJiMTMtYjlmOGJhNmJkMjJi");
+        oneSignalApiId = config().getJsonObject("OneSignal").getString(ONESIGNAL_APP_ID,"MY_APP_ID");
+        onesignalApiKey = config().getJsonObject("OneSignal").getString(ONESIGNAL_API_KEY,"MY_API_KEY");
 
 
 
